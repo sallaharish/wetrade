@@ -1,0 +1,96 @@
+/* Home.css */
+.home-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;      /* <-- this makes it float inside .hero-section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.form-container {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  max-width: 345px;
+  width: 90%;
+  border-radius: 1rem;
+  color: #fff;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-container input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  padding-right: 0rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.form-container button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.recaptcha-placeholder {
+  background: #eee;
+  text-align: center;
+  margin: 0.75rem 0;
+  padding: 1rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 3rem 2rem;
+  margin-top: -11rem; /* Pulls cards up over video */
+  z-index: 1;
+  position: relative;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
