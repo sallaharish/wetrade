@@ -1,6 +1,6 @@
 /* Navbar.css */
 .navbar {
-        background: linear-gradient(90deg, #0b001d, #1d0436);
+        /* background: linear-gradient(90deg, #0b001d, #1d0436); */
     color: white;
 
     position: relative;
@@ -9,7 +9,16 @@
     align-items: center;
     justify-content: center;
     padding: .5rem 1rem;
+    z-index: 1000;
     
+  }
+  .link:hover{
+    color: white;
+  }
+  .active-link {
+    color: #ff416c;
+    font-weight: bold;
+    border-bottom: 2px solid #ff416c;
   }
   .contact-header{
     display: flex   ;
