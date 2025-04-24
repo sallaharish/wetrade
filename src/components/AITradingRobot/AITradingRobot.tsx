@@ -1,7 +1,7 @@
   import React from "react";
   import { CheckCircle2 } from "lucide-react";
   import "./AITradingRobot.css";
-  import loadingAnimation from "../../Assets/Animations/Animation - 1745321324517.json";
+  import loadingAnimation from "../../Assets/Animations/Animation - 1745321324517.json"
   import Lottie from "lottie-react";
 
   const features = [

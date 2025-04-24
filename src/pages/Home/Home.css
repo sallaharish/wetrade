@@ -22,18 +22,26 @@
 }
 
 .form-container {
-  position: absolute;
+  position: fixed;
   top: 20%;
   right: 5%;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2rem;
-  max-width: 345px;
-  width: 90%;
-  border-radius: 1rem;
-  color: #fff;
-  z-index: 2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  background: #0d0f1c;
+  padding: 1rem;
+  color: white;
+  z-index: 100;
+  transform: translateX(100%);
+  animation: slideIn 0.4s forwards;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.4);
 }
+
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
 
 .form-container h2 {
   margin-bottom: 1rem;
@@ -42,7 +50,7 @@
 }
 
 .form-container input {
-  width: 100%;
+  width: 95%;
   margin: 0.5rem 0;
   padding: 0.75rem;
   padding-right: 0rem;
@@ -76,7 +84,7 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding: 3rem 2rem;
-  margin-top: -11rem; /* Pulls cards up over video */
+ 
   z-index: 1;
   position: relative;
 }
