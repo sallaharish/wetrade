@@ -6,6 +6,8 @@
   import "./Home.css"
 import Navbar from '../../components/Navbar/Navbar'
 import AITradingSecondRobot from '../../components/AITradingRobot/AITradingSecondRobot'
+import PricingPlans from '../../components/PricingPlans/PricingPlans'
+import LuxAlgoFAQ from '../../components/FaqPage/FaqPage'
 
   function  Home() {
     const [showForm, setShowForm] = useState(false);
@@ -47,6 +49,8 @@ import AITradingSecondRobot from '../../components/AITradingRobot/AITradingSecon
           <AITradingRobot/>
           <AITradingSecondRobot/>
         <FaqSection/>
+        <PricingPlans/>
+        <LuxAlgoFAQ/>
       
       
       </div>

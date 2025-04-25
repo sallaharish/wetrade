@@ -1,0 +1,93 @@
+.faq-container {
+    background: radial-gradient(circle at top left, #0a0f2c, #020617);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    margin: auto;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .faq-item {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background: #1e293b;
+    transform: scale(1.01);
+  }
+  
+  .faq-question {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #38bdf8;
+  }
+  
+  .faq-icon {
+    margin-right: 10px;
+    color: #22c55e;
+    font-size: 1.2rem;
+  }
+  
+  .faq-answer {
+    padding: 0 1rem 1rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    display: none;
+  }
+  
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+  
+  .faq-form {
+    background: #111827;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    margin-top: 2rem;
+    color: white;
+  }
+  
+  .faq-form input,
+  .faq-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background: #0f172a;
+    color: white;
+    outline: none;
+  }
+  
+  .faq-form input:focus,
+  .faq-form textarea:focus {
+    border-color: #38bdf8;
+  }
+  
+  .faq-form button {
+    background: linear-gradient(90deg, #22c55e, #10b981);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .faq-form button:hover {
+    background: linear-gradient(90deg, #16a34a, #0f766e);
+  }
+  

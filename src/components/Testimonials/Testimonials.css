@@ -1,0 +1,126 @@
+/* Testimonials.css */
+
+.testimonials-section {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subheading {
+    font-size: 1.2rem;
+    color: #aaaaaa;
+    margin-bottom: 1rem;
+  }
+  
+  .indicator {
+    width: 60px;
+    height: 5px;
+    margin: 0 auto 2rem;
+    background-color: #00ff99;
+    border-radius: 5px;
+  }
+  
+  .testimonial-box {
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.15);
+    position: relative;
+  }
+  
+  .quote-icon {
+    font-size: 3rem;
+    color: #00ff99;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #dddddd;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .user-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #00ff99;
+  }
+  
+  .user-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .user-location {
+    font-size: 0.9rem;
+    color: #bb86fc;
+  }
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .arrow {
+    font-size: 1.5rem;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .arrow:hover {
+    color: #00ff99;
+  }
+  
+  .avatars {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .avatar.active {
+    opacity: 1;
+    border-color: #00ff99;
+    transform: scale(1.1);
+  }
+  
+  .avatar:hover {
+    opacity: 1;
+    border-color: #00ff99;
+  }
+  
