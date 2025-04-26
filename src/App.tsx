@@ -13,7 +13,6 @@ import Features from './pages/Features/Features';
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
         
       }}>
         
