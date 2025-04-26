@@ -1,5 +1,5 @@
 .footer {
-    background: #0d0d18;
+    background: transparent;
     color: #fff;
     padding: 2rem;
     font-family: 'Arial', sans-serif;
@@ -111,7 +111,7 @@
   .footer-bottom {
     margin-top: 2rem;
     padding: 1rem 2rem;
-    background-color: #111; /* or match your footer background */
+    background-color: transparent; /* or match your footer background */
   }
   
   .footer-bottom hr {

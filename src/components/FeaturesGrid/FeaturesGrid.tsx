@@ -58,7 +58,7 @@ const FeaturesGrid: React.FC = () => {
         <div
           className="feature-card"
           key={index}
-          style={{ backgroundColor: feature.bgColor || "#fff" }}
+         
         >
           <img src={feature.icon} alt={feature.title} className="feature-icon" />
           <h3>{feature.title}</h3>

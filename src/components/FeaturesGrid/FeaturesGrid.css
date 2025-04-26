@@ -5,10 +5,11 @@
     padding: 48px 24px;
     max-width: 1300px;
     margin: 0 auto;
+    top:-10rem;
   }
   
   .feature-card {
-    background-color: #ffffff;
+    background-color: #030D57;
     border: 1px solid #e2e2e2;
     border-radius: 16px;
     padding: 24px;
@@ -32,18 +33,18 @@
   .feature-card h3 {
     font-size: 20px;
     font-weight: 600;
-    color: #111;
+    color: white;
     margin-bottom: 10px;
   }
   
   .feature-card p {
     font-size: 15px;
-    color: #555;
+    color: white;
     line-height: 1.6;
   }
   
   .feature-card:hover {
-    background-color: #e0f7ec; /* light green like the one in the screenshot */
+    background-color: #232a5e; /* light green like the one in the screenshot */
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
@@ -52,13 +53,7 @@
     transform: scale(1.1);
   }
   
-  .feature-card:hover h3 {
-    color: #007bff;
-  }
-  
-  .feature-card:hover p {
-    color: #333;
-  }
+
   
   /* Tablet */
   @media (max-width: 1024px) {
@@ -125,7 +120,6 @@
     }
   }
   .feature-card {
-    background-color: #ffffff;
     border: 1px solid #e2e2e2;
     border-radius: 16px;
     padding: 24px;
@@ -139,14 +133,8 @@
   }
   
   /* ✨ This is the hover effect you're asking for */
-  .feature-card:hover {
-    background-color: #e0f7ec; /* Light green on hover */
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  }
   
   .feature-card {
-    background-color: #ffffff;
     border: 1px solid #e2e2e2;
     border-radius: 16px;
     padding: 24px;
@@ -165,12 +153,6 @@
     transition: color 0.3s ease;
   }
   
-  .feature-card:hover {
-    background-image: linear-gradient(135deg, #e0f7ec, #ccf2ff, #ffe4e1);
-    background-position: right bottom;
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  }
   
   
   
@@ -208,7 +190,6 @@
     width: 280px;
     margin: 15px;
     padding: 20px;
-    background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: left;

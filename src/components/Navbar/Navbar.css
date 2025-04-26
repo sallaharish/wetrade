@@ -16,7 +16,9 @@
         .nav-item {
           position: relative;
         }
-        
+        .nav-item:hover{
+          color:rgb(202, 191, 194);
+        }
         .dropdown {
           position: relative;
         }
@@ -60,12 +62,13 @@
         }
         
         .link:hover{
-          color: white;
+          color: rgb(202, 191, 194);
+          
         }
         .active-link {
-          color: #ff416c;
+          color:rgb(202, 191, 194) !important;
           font-weight: bold;
-          border-bottom: 2px solid #ff416c;
+          
         }
         .contact-header{
           display: flex   ;

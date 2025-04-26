@@ -1,0 +1,121 @@
+.background-video-features {
+    position: absolute;      /* <-- this makes it float inside .hero-section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .hero-section-features {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    
+  }
+  
+
+.features-section {
+    padding: 10px 20px;
+    background: transparent;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: white;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    margin: 12px auto 0;
+    background: linear-gradient(to right, #4caf50, #ba68c8);
+    border-radius: 2px;
+  }
+  
+  /* Flexbox layout */
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  /* Feature card */
+  .featurecard {
+    background:#030D57;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    width: 90% !important;
+    flex: 1 1 300px; /* responsive width */
+  cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .featurecard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background-color: #232a5e;
+  }
+  
+  .icon-wrapper {
+    background: #e8f5e9;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white
+  }
+  
+  .feature-description {
+    font-size: 16px;
+    color: white;
+    line-height: 1.6;
+  }
+  
+ 
+
+  /* Adjusting layout for laptop version (1440px) */
+@media (max-width: 1440px) {
+    .features-grid {
+      justify-content: space-between; /* Distribute the two cards evenly */
+      max-width: 1300px; /* Ensuring the grid doesn’t stretch too wide */
+    }
+  
+    .featurecard {
+      width: 48%; /* Set width to 48% to fit two cards in a row */
+    }
+  }
+  
+  /* Responsive tweaks for smaller devices */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 26px;
+    }
+  
+    .featurecard {
+      width: 100%;
+      max-width: 90%;
+    }
+  }
+  

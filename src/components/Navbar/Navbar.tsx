@@ -4,28 +4,28 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { getCardImage, getDescription } from "../../helpers/constants";
-import logo from "../../Assets/images/logo.png"
+import logo from "../../Assets/images/logo.png";
 const Navbar = ({ onGetStartedClick }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredDropdown, setHoveredDropdown] = useState(null);
-
+  const location = useLocation();
   const navLinks = [
     { label: "Home", to: "/" },
     {
       label: "Features",
       submenu: [
-        { label: "Fully Automated Trading Software", to: "/features/toolkits" },
-        { label: "Quick Strategy Guide", to: "/features/screeners" },
+        { label: "Fully Automated Trading Software", to: "/features" },
+        { label: "Quick Strategy Guide", to: "/features" },
         {
           label: "Real-Time Alerts and Notifications",
-          to: "/features/backtesters",
+          to: "/features",
         },
-        { label: "Optimal Money-Management", to: "/features/ai-backtesting" },
+        { label: "Optimal Money-Management", to: "/features" },
         {
           label: "24/7 Quick Response Support",
-          to: "/features/ai-backtesting",
+          to: "/features",
         },
       ],
     },
@@ -37,29 +37,22 @@ const Navbar = ({ onGetStartedClick }: any) => {
         { label: "Back test of Trading Strategy", to: "/resources/docs" },
         { label: "Blog", to: "/resources/blog" },
         { label: "About", to: "/resources/docs" },
-       
       ],
     },
     { label: "FAQ", to: "/faq" },
     { label: "Contact", to: "/contact" },
   ];
 
+  console.log(location,"loc")
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img
-          src={logo}
-          alt="Logo"
-          className="logo"
-        />
+        <img src={logo} alt="Logo" className="logo" />
       </div>
 
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
-        <img
-          src={logo}
-          alt="Logo"
-          className="logo logo-sidebar"
-        />
+        <img src={logo} alt="Logo" className="logo logo-sidebar" />
         <span className="close-icon-bg" onClick={() => setIsOpen(!isOpen)}>
           <CloseIcon />
         </span>
@@ -79,9 +72,12 @@ const Navbar = ({ onGetStartedClick }: any) => {
               <div
                 className="dropdown"
                 onMouseEnter={() => setHoveredDropdown(link.label)}
-                onMouseLeave={() => setHoveredDropdown(null)}
               >
-                <span className="link dropdown-toggle">
+                <span className={
+    link.submenu?.some((sublink: any) => location.pathname.startsWith(sublink.to))
+      ? "link active-link"
+      : "link"
+  }>
                   {link.label}
                   <KeyboardArrowDownIcon
                     style={{ marginLeft: "5px", fontSize: "18px" }}
@@ -89,7 +85,10 @@ const Navbar = ({ onGetStartedClick }: any) => {
                 </span>
 
                 {hoveredDropdown === link.label && (
-                  <div className="mega-menu">
+                  <div
+                    className="mega-menu"
+                    onMouseLeave={() => setHoveredDropdown(null)}
+                  >
                     <div className="menu-items">
                       {link.submenu.map((sublink: any, subIndex: any) => (
                         <NavLink
@@ -99,14 +98,6 @@ const Navbar = ({ onGetStartedClick }: any) => {
                         >
                           <div className="card-content">
                             <h4>{sublink.label}</h4>
-                            <p>
-                              {getDescription(sublink.label)
-                                .split(" ")
-                                .slice(0, 15)
-                                .join(" ")}
-                              {getDescription(sublink.label).split(" ").length >
-                                25 && "..."}
-                            </p>
                           </div>
                           <div
                             className="card-bg"
