@@ -21,7 +21,7 @@ const faqs: FAQItem[] = [
   }
 ];
 
-const LuxAlgoFAQ: React.FC = () => {
+const Faqs: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -61,4 +61,4 @@ const LuxAlgoFAQ: React.FC = () => {
   );
 };
 
-export default LuxAlgoFAQ;
+export default Faqs;

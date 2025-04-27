@@ -1,10 +1,13 @@
 .pricing-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     background: transparent;
+  }
+  .pricing-heading{
+    color: white
   }
   
   .card {

@@ -5,6 +5,7 @@ import React from 'react';
 import Footer from './components/Footer/Footer';
 import BG from "./Assets/images/bg.webp"
 import Features from './pages/Features/Features';
+import Faqs from './components/FaqPage/FaqPage';
 
   function App() {
     return (
@@ -20,6 +21,7 @@ import Features from './pages/Features/Features';
           
           <Route path='/' element={<Home/>}/>
           <Route path='/features' element={<Features/>}/>
+          <Route path='/faq' element={<Faqs/>}/>
         </Routes>
         <Footer/>
       </div>

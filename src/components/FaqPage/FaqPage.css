@@ -3,10 +3,10 @@
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-    max-width: 800px;
     margin: auto;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:20px  40px  20px 40px;
   }
   
   .faq-item {

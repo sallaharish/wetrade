@@ -51,7 +51,10 @@ const plans = [
 
 const PricingPlans = () => {
   return (
+    <div>
+      <h1 className="pricing-heading">Plans for every style of trading</h1>
     <div className="pricing-container">
+     
       {plans.map((plan, index) => (
         <div key={index} className={`card ${plan.colorClass}`}>
           <div className="plan-top">
@@ -74,6 +77,7 @@ const PricingPlans = () => {
           <p className="guarantee">30-day money-back guarantee</p>
         </div>
       ))}
+    </div>
     </div>
   );
 };

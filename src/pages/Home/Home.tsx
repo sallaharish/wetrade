@@ -50,7 +50,6 @@ import LuxAlgoFAQ from '../../components/FaqPage/FaqPage'
           <AITradingSecondRobot/>
         <FaqSection/>
         <PricingPlans/>
-        <LuxAlgoFAQ/>
       
       
       </div>
