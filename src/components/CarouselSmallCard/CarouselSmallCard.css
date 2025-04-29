@@ -1,0 +1,92 @@
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 20px;
+  }
+  
+  .carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-card {
+    flex: 0 0 calc(100% / 3.3);
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-right: 16px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+  }
+  
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Less dark by default */
+    padding: 16px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: background 0.3s ease;
+    z-index: 2;
+  }
+  
+  .carousel-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease;
+    z-index: 1;
+  }
+  
+  /* Hover Effects */
+  .carousel-card:hover::before {
+    backdrop-filter: blur(4px);
+  }
+  
+  .carousel-card:hover .card-overlay {
+    background: rgba(0, 0, 0, 0.7); /* More prominent */
+  }
+  
+  .card-overlay h3,
+  .card-overlay p {
+    margin: 0;
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  .nav-btn.left {
+    left: 10px;
+  }
+  
+  .nav-btn.right {
+    right: 10px;
+  }
+  

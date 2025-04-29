@@ -1,0 +1,104 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: opacity 0.6s ease;
+  }
+  
+  .carousel-slide.active {
+    display: block;
+  }
+  
+  .carousel-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    position: absolute;
+    top: 65%;
+    left: 80px;  /* Adjust based on your preference */
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 2;
+    max-width: 40%;  /* Ensures content does not overlap with media */
+  }
+
+  .carousel-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .carousel-controls {
+    position: absolute;
+    width: 96%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 0 1rem;
+  }
+  
+  .carousel-controls .prev,
+  .carousel-controls .next {
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: #ffffff;
+  }
+  

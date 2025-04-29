@@ -1,59 +1,49 @@
-  import React, { useState } from 'react'
-  import FeaturesGrid from '../../components/FeaturesGrid/FeaturesGrid'
-  import AITradingRobot from '../../components/AITradingRobot/AITradingRobot'
-  import FaqSection from '../../components/FaqSection/FaqSection'
-  import bgVideo1 from  "../../Assets/videos/background2.mp4"
-  import "./Home.css"
-import Navbar from '../../components/Navbar/Navbar'
-import AITradingSecondRobot from '../../components/AITradingRobot/AITradingSecondRobot'
-import PricingPlans from '../../components/PricingPlans/PricingPlans'
-import LuxAlgoFAQ from '../../components/FaqPage/FaqPage'
+import React, { useState } from 'react';
+import './Home.css';
+import FeaturesGrid from '../../components/CarouselSmallCard/CarouselSmallCard';
+import AITradingRobot from '../../components/AITradingRobot/AITradingRobot';
+import FaqSection from '../../components/FaqSection/FaqSection';
+import Navbar from '../../components/Navbar/Navbar';
+import AITradingSecondRobot from '../../components/AITradingRobot/AITradingSecondRobot';
+import PricingPlans from '../../components/PricingPlans/PricingPlans';
+import Carousel from '../../components/Carousel/Carousel';
+import CarouselSmallCard from '../../components/CarouselSmallCard/CarouselSmallCard';
 
-  function  Home() {
-    const [showForm, setShowForm] = useState(false);
-    return (
-      <div>
-      
+function Home() {
+  const [showForm, setShowForm] = useState(false);
+
+  return (
+    <div>
       <div className="home-wrapper">
-        {/* Video Section */}
         <section className="hero-section">
-          <Navbar onGetStartedClick={() => setShowForm(true)}/>
-          <video autoPlay muted loop className="background-video">
-            <source src={bgVideo1} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Navbar onGetStartedClick={() => setShowForm(true)} />
+          <Carousel />
 
-          {/* Floating Form */}
-          {showForm && 
-          <div className="form-container">
-            <h2>Automatic Bot Download</h2>
-            <form>
-              <input type="text" placeholder="Enter Your Name" />
-              <input type="email" placeholder="Enter Your Email" />
-              <input type="tel" placeholder="Enter Your Phone No" />
-              <input type="text" placeholder="Enter Your City Name" />
-              {/* <div className="recaptcha-placeholder">[reCAPTCHA]</div>   */}
-              <button type="submit">Download AI Robot</button>
-            </form>
-          </div>}
+          {showForm && (
+            <div className="form-container">
+              <h2>Automatic Bot Download</h2>
+              <form>
+                <input type="text" placeholder="Enter Your Name" />
+                <input type="email" placeholder="Enter Your Email" />
+                <input type="tel" placeholder="Enter Your Phone No" />
+                <input type="text" placeholder="Enter Your City Name" />
+                <button type="submit">Download AI Robot</button>
+              </form>
+            </div>
+          )}
         </section>
 
-        {/* Cards Section */}
         <section className="cards-section">
-        <FeaturesGrid/>  
+          <CarouselSmallCard/>
         </section>
+
+        <AITradingRobot />
+        <AITradingSecondRobot />
+        <FaqSection />
+        <PricingPlans />
       </div>
+    </div>
+  );
+}
 
-
-    
-          <AITradingRobot/>
-          <AITradingSecondRobot/>
-        <FaqSection/>
-        <PricingPlans/>
-      
-      
-      </div>
-    ) 
-  }
-
-  export default Home
+export default Home;
