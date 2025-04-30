@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./CarouselSmallCard.css";
 
-import image1 from "../../Assets/images/c1.jpg";
-import image2 from "../../Assets/images/c2.jpg";
-import image3 from "../../Assets/images/c3.jpg";
-import image4 from "../../Assets/images/c4.jpg";
-import image5 from "../../Assets/images/c5.jpg";
-import image6 from "../../Assets/images/c6.jpg";
-import image7 from "../../Assets/images/c7.jpg";
-import image8 from "../../Assets/images/c8.jpg";
+import easyaceesses from "../../Assets/images/Easy Access on any Device.jpg";
+import dedicated from "../../Assets/images/Dedicated Expert Support.jpg";
+import zerotrading from "../../Assets/images/Zero Trading Knowledge Required.jpg";
+import zeromonitoring from "../../Assets/images/Zero Monitoring.jpg";
+import start24 from "../../Assets/images/Start Trading in 24 Hours.jpg";
+import onetiome from "../../Assets/images/One Time Setup.jpg";
+
 
 type Feature = {
   icon: string;
@@ -18,45 +17,36 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    icon: image1,
+    icon: onetiome,
     title: "One Time Setup",
-    description: "Our team will install the EA software and guide you until you're profiting.",
+    description: "Upon subscribing to our software, our technical team will carry out a full installation of the EA (Expert Advisor) system for automated trading, either on your personal device or a secure VPS. We provide comprehensive guidance throughout the setup process and ongoing support to ensure smooth operation until you begin achieving consistent trading profits.",
   },
   {
-    icon: image2,
-    title: "Smooth Experience on any Device",
-    description: "Use on mobile, computer, or any device. Switch seamlessly and withdraw anytime.",
+    icon: easyaceesses,
+    title: "Seamless Trading Across All Devices",
+    description: "Our custom-built trading Software is optimised for a flawless experience on any device you choose — whether it’s a mobile phone, tablet, or computer. Effortlessly switch between devices at your convenience, with the added flexibility of easy withdrawals anytime, from anywhere.",
   },
   {
-    icon: image3,
-    title: "Zero Trading Knowledge Required",
-    description: "Fully automated and beginner-friendly. No prior trading experience needed.",
+    icon: zerotrading,
+    title: "No Prior Trading Knowledge Required",
+    description: "Our custom-built trading platform is designed with simplicity in mind, making it ideal for beginners and seasoned traders alike. Fully optimized for all devices—including smartphones, tablets, and computers—you can seamlessly switch between platforms without losing progress or functionality. Enjoy fast, secure withdrawals at any time, from any device, with just a few clicks.",
   },
   {
-    icon: image4,
-    title: "Start Trading in 24 Hours",
-    description: "Get started quickly and begin seeing daily profits within just one day.",
+    icon: start24,
+    title: "Start Trading Within 24 Hours",
+    description: "Once your account setup is complete, trading begins automatically—allowing you to start seeing potential daily profits right away. Our streamlined onboarding process ensures that you’re up and running within 24 hours, with real-time access to your trading dashboard, performance insights, and earnings updates. No delays, no hassle—just fast, efficient entry into the world of trading.",
   },
   {
-    icon: image5,
-    title: "Dedicated Expert Support",
-    description: "24/7 expert monitoring with live analysis and full support day and night.",
+    icon: zeromonitoring,
+    title: "Hands-Free Trading with Zero Monitoring Required",
+    description: "As a valued client, you don’t need to spend time watching the markets or analyzing trends. Our advanced Expert Advisor (EA) software is fully automated and trades on your behalf using a carefully optimized, profit-focused strategy. Built with precision and efficiency, the system continuously scans the market to identify the best trading opportunities—so you can enjoy consistent results without lifting a finger.",
   },
   {
-    icon: image6,
-    title: "Global Access",
-    description: "Trade anytime, anywhere with our worldwide platform.",
+    icon: dedicated,
+    title: "24/7 Expert Support",
+    description: "Our team of trading experts monitors your automated trades day and night to ensure everything runs smoothly. With round-the-clock supervision, we make sure your account stays on track and performs at its best—giving you peace of mind while the system works for you.",
   },
-  {
-    icon: image7,
-    title: "Advanced AI",
-    description: "Our AI makes data-driven trades for optimal performance.",
-  },
-  {
-    icon: image8,
-    title: "Secure Platform",
-    description: "Bank-level security to protect your investments.",
-  },
+
 ];
 
 const ITEMS_PER_VIEW = 3;
@@ -117,17 +107,15 @@ const CarouselSmallCard: React.FC = () => {
           }}
         >
           {visibleItems.map((feature, index) => (
-            <div
-              className="carousel-card"
-              key={index}
-              style={{ backgroundImage: `url(${feature.icon})` }}
-            >
+            <div className="carousel-card" key={index}>
+              <img src={feature.icon} alt={feature.title} className="card-image" />
               <div className="card-overlay">
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
               </div>
             </div>
           ))}
+
         </div>
       </div>
 

@@ -8,6 +8,7 @@ import AITradingSecondRobot from '../../components/AITradingRobot/AITradingSecon
 import PricingPlans from '../../components/PricingPlans/PricingPlans';
 import Carousel from '../../components/Carousel/Carousel';
 import CarouselSmallCard from '../../components/CarouselSmallCard/CarouselSmallCard';
+import TradingToolsSection from '../../components/TradingTool/TradingTools';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -36,6 +37,7 @@ function Home() {
         <section className="cards-section">
           <CarouselSmallCard/>
         </section>
+        {/* <TradingToolsSection/>   */}
 
         <AITradingRobot />
         <AITradingSecondRobot />

@@ -10,10 +10,11 @@ import Faqs from './components/FaqPage/FaqPage';
   function App() {
     return (
       <div className="App"  style={{
-        backgroundImage: `url(${BG})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        // backgroundImage: `url(${BG})`,
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'center',
+        // backgroundRepeat: 'no-repeat',
+        backgroundColor:"black"
         
       }}>
         

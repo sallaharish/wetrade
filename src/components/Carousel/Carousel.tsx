@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './Carousel.css';
-import video1 from '../../Assets/videos/background1.mp4';
-import video2 from '../../Assets/videos/background2.mp4';
-import image1 from '../../Assets/images/slide1.jpg';
-import image2 from '../../Assets/images/slide2.jpg';
-import image3 from '../../Assets/images/slide3.jpg';
+import mainslide1 from '../../Assets/images/Main Slide 1.mp4';
+import mainslide2 from '../../Assets/images/Main Slide 2.jpg';
+import mainslide3 from '../../Assets/images/Main Slide 3.mp4';
+import mainslide4 from '../../Assets/images/Main Slide 4.jpg';
+import mainslide5 from '../../Assets/images/Main Slide 5.mp4';
 
 const slides = [
-  { type: 'image', src: image1, content: 'Trade smarter, not harder – seize the market opportunities with confidence and precision' },
-  { type: 'video', src: video1, content: 'Slide 2 Content' },
-  { type: 'image', src: image2, content: 'Slide 3 Content' },
-  { type: 'video', src: video2, content: 'Slide 4 Content' },
-  { type: 'image', src: image3, content: 'Slide 5 Content' },
+  { type: 'video', src: mainslide1, content: "Smart Trading, Powered by AI." },
+  { type: 'image', src: mainslide2, content: "Automated Intelligence. Consistent Results." },
+  { type: 'video', src: mainslide3, content: "Let the AI Work While You Sleep." },
+  { type: 'image', src: mainslide4, content: "Profit on Autopilot." },
+  { type: 'video', src: mainslide5, content: "Master the Market—Let AI Trade Crypto for You." },
 ];
 
 const Carousel = () => {
@@ -38,10 +38,10 @@ const Carousel = () => {
         >
           <div className="carousel-content">
             <h2 style={{textAlign:"start"}}>{slide.content}</h2>
-            {index === 0 && (  // Show button only on the first slide
+          
               <button className="carousel-btn" onClick={() => alert('Button clicked!')}>
-                Show More
-              </button>)}
+                Get started
+              </button>
           </div>
           {slide.type === 'video' ? (
             <video
