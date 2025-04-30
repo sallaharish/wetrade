@@ -1,0 +1,26 @@
+.form-container h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .form-container input {
+    width: 95%;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    padding-right: 0rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+  
+  .form-container button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }

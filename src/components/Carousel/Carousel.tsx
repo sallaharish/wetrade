@@ -14,7 +14,7 @@ const slides = [
   { type: 'video', src: mainslide5, content: "Master the Market—Let AI Trade Crypto for You." },
 ];
 
-const Carousel = () => {
+const Carousel = ({setShowForm}:any) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -39,7 +39,7 @@ const Carousel = () => {
           <div className="carousel-content">
             <h2 style={{textAlign:"start"}}>{slide.content}</h2>
           
-              <button className="carousel-btn" onClick={() => alert('Button clicked!')}>
+              <button className="carousel-btn" onClick={() => setShowForm(true)}>
                 Get started
               </button>
           </div>
