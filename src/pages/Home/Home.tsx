@@ -11,6 +11,7 @@ import CarouselSmallCard from '../../components/CarouselSmallCard/CarouselSmallC
 import TradingToolsSection from '../../components/TradingTool/TradingTools';
 import Experience from '../../components/Experience/Experience';
 import PopupModal from '../../components/PopupModal/PopupModal';
+import HeroSlider from '../../components/HeroSlider/HeroSlider';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -30,6 +31,7 @@ function Home() {
         </section>
         {/* <TradingToolsSection/>   */}
         <Experience/>
+        <HeroSlider/>
 
         <AITradingRobot />
         <AITradingSecondRobot />

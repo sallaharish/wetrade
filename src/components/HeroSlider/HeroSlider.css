@@ -1,0 +1,111 @@
+.lux-hero-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: black;
+    color: white;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .lux-hero-image-container {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    height: 350px;
+    border: 1px solid 00bfff;
+    border-radius: 19px;
+  }
+  
+  .lux-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 19px;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 1;
+  }
+  
+  .fade-out {
+    opacity: 0;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }
+  
+  .lux-hero-content {
+    flex: 1 1 400px;
+    max-width: 600px;
+  }
+  
+  .lux-subtitle {
+    color: #00bfff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lux-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .lux-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+  }
+  
+  .lux-cta {
+    background: #1e293b;
+    border: 1px solid #fff;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .lux-cta:hover {
+    background: #334155;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .lux-hero-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  
+    .lux-hero-image-container,
+    .lux-hero-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .lux-hero-image {
+      width: 100%;
+      max-height: 300px;
+    }
+  
+    .lux-title {
+      font-size: 2rem;
+    }
+  
+    .lux-description {
+      font-size: 1rem;
+    }
+  
+    .lux-cta {
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+  
