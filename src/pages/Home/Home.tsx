@@ -12,6 +12,7 @@ import TradingToolsSection from '../../components/TradingTool/TradingTools';
 import Experience from '../../components/Experience/Experience';
 import PopupModal from '../../components/PopupModal/PopupModal';
 import HeroSlider from '../../components/HeroSlider/HeroSlider';
+import FeaturesBox from '../../components/FeaturesBox/FeaturesBox';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -32,6 +33,7 @@ function Home() {
         {/* <TradingToolsSection/>   */}
         <Experience/>
         <HeroSlider/>
+        <FeaturesBox/>
 
         <AITradingRobot />
         <AITradingSecondRobot />
