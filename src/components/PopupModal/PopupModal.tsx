@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Dialog,
@@ -15,9 +15,41 @@ function PopupModal({ open, setOpen }: any) {
   const theme = useTheme();
   const handleClose = () => setOpen(false);
 
+  // Step 1: State to store form data
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    city: '',
+  });
+
+  // Step 2: Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Step 3: Handle form submit
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    // Convert data to CSV
+    const headers = ['Name', 'Email', 'Phone', 'City'];
+    const values = [formData.name, formData.email, formData.phone, formData.city];
+    const csvContent = `${headers.join(',')}\n${values.join(',')}`;
+
+    // Create blob and download
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'form-data.csv';
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+    // Optional: Clear form & close modal
+    setFormData({ name: '', email: '', phone: '', city: '' });
     handleClose();
   };
 
@@ -83,27 +115,35 @@ function PopupModal({ open, setOpen }: any) {
           >
             <TextField
               label="Your Name"
-              variant="outlined"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               required
               fullWidth
             />
             <TextField
               label="Email"
+              name="email"
               type="email"
-              variant="outlined"
+              value={formData.email}
+              onChange={handleChange}
               required
               fullWidth
             />
             <TextField
               label="Phone Number"
+              name="phone"
               type="tel"
-              variant="outlined"
+              value={formData.phone}
+              onChange={handleChange}
               required
               fullWidth
             />
             <TextField
               label="City"
-              variant="outlined"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
               required
               fullWidth
             />
