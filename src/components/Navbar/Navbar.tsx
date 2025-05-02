@@ -63,13 +63,14 @@ const Navbar = ({ onGetStartedClick }: any) => {
         </span>
 
         {navLinks.map((link, index) => (
-          <div className="nav-item" key={index}>
+          <div className="nav-item" key={index} onMouseLeave={() => !isOpen && setHoveredDropdown(null)}>
             {!link.submenu ? (
               <NavLink
                 to={link.to}
                 className={({ isActive }) =>
                   isActive ? "link active-link" : "link"
                 }
+                onMouseEnter={() => !isOpen && setHoveredDropdown(null)}
               >
                 {link.label}
               </NavLink>

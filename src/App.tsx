@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import BG from "./Assets/images/bg.webp"
 import Features from './pages/Features/Features';
 import Faqs from './components/FaqPage/FaqPage';
+import ContactUs from './components/Contact/Contact';
 
   function App() {
     return (
@@ -23,6 +24,7 @@ import Faqs from './components/FaqPage/FaqPage';
           <Route path='/' element={<Home/>}/>
           <Route path='/features' element={<Features/>}/>
           <Route path='/faq' element={<Faqs/>}/>
+          <Route path='/contact' element={<ContactUs/>}/>
         </Routes>
         <Footer/>
       </div>

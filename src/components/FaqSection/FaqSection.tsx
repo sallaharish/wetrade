@@ -1,6 +1,8 @@
 import React from 'react';
 import './FaqSection.css';
+import Navbar from '../Navbar/Navbar';
 
+import bgVideo1 from  "../../Assets/videos/background1.mp4"
 const faqs = [
   {
     question: 'Do I need trading knowledge?',
@@ -36,6 +38,8 @@ const faqs = [
 
 const FaqSection: React.FC = () => {
   return (
+    <div>
+       
     <section className="faq-container">
       <div className="faq-header">
         <h2>Frequently Asked Questions</h2>
@@ -53,6 +57,7 @@ const FaqSection: React.FC = () => {
         <button className="view-more-btn">View More FAQs</button>
       </div>
     </section>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './FaqPage.css'; // Reference to the CSS I’ll include below
-
+import Navbar from '../Navbar/Navbar';
+import bgVideo1 from  "../../Assets/videos/background1.mp4"
 type FAQItem = {
   question: string;
   answer: string;
@@ -29,6 +30,17 @@ const Faqs: React.FC = () => {
   };
 
   return (
+    <div>
+       <section className="hero-section-features">
+                <Navbar />
+                <video autoPlay muted loop className="background-video-features">
+                  <source src={bgVideo1} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+      
+                {/* Floating Form */}
+                
+              </section>
     <div className="faq-container">
       <h2 className="text-center text-2xl font-bold mb-4">Frequently Asked Questions</h2>
 
@@ -57,6 +69,7 @@ const Faqs: React.FC = () => {
         <textarea rows={4} placeholder="Your Question" required />
         <button type="submit">Submit Question</button>
       </form>
+    </div>
     </div>
   );
 };
