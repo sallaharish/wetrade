@@ -7,6 +7,7 @@ import zerotrading from "../../Assets/images/Zero Trading Knowledge Required.jpg
 import zeromonitoring from "../../Assets/images/Zero Monitoring.jpg";
 import start24 from "../../Assets/images/Start Trading in 24 Hours.jpg";
 import onetiome from "../../Assets/images/One Time Setup.jpg";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 
 type Feature = {
@@ -50,12 +51,20 @@ const features: Feature[] = [
 ];
 
 const ITEMS_PER_VIEW = 3;
-const VISIBLE_CARDS = 3.3; // 3 full cards and 30% of the next
+
+
+
+
 
 const CarouselSmallCard: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
 
+
+  const theme = useTheme();
+const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // <600px
+const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600–900px
+const VISIBLE_CARDS = isMobile ? 0.97 : isTablet ? 2 : 3.3;
   // Get rotated items with cloned cards at the end to simulate infinite scroll
   const getRotatedItems = () => {
     const items = [...features];

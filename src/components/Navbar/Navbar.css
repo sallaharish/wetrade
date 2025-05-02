@@ -287,8 +287,8 @@
 
       .navbar-links a {
       text-decoration: none;
-      color: #00bfff;
-      font-weight: 500;
+      color: white;
+      font-weight: 400;
       }
 
    
@@ -316,7 +316,29 @@
           .contact-info {
             display: none;
           }
-        
+
+          /* .link{
+            display: flex;
+                justify-content: center;
+                align-items: center;
+          } */
+
+          .mega-menu{
+            width: 300px;
+            top: 30px;
+            padding: 0;
+            position: relative;
+            background: none;
+            box-shadow: none;
+            min-height: 340px;
+          }
+        .explore-link{
+          width: 90%;
+          background: none;
+          border: none;
+          text-align: start;
+          font-weight: bold !important;
+        }
           .navbar-links {
             position: fixed;
             top: 0;
@@ -331,6 +353,11 @@
             display: flex;
             gap: 20px;
             transition: left 0.4s ease-in-out;
+            overflow-y: auto;
+          }
+
+          .navbar-links a{
+            padding: 0;
           }
         
           .navbar-links.open {
@@ -362,6 +389,7 @@
         
           .hamburger {
             display: flex;
+            margin-right: 29px;
           }
           .contact-info{
               display: none;
@@ -369,4 +397,10 @@
           .navbar{
           justify-content: space-between;
         }
+
+        .menu-card{
+          background: none;
+          border: none;
+        }
+        
         }

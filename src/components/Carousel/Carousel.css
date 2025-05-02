@@ -102,3 +102,11 @@
     background-color: #ffffff;
   }
   
+
+  @media (max-width: 768px) {
+
+    .carousel-content{
+      font-size: 1rem;
+      top: 60%;
+    }
+  }

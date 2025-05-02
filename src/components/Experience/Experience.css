@@ -52,3 +52,22 @@
     text-decoration: none;
   }
   
+
+  @media screen and (max-width:768px) {
+    .hero-content h1 {
+ font-size: 1.2rem;
+    }
+
+    .hero-content p{
+      font-size: 0.7rem;
+    }
+
+    .hero-content{
+      height: 30vh;
+    }
+    .hero-container{
+      min-height: 70vh;
+      padding: 0;
+    }
+    
+  }

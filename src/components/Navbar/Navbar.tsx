@@ -1,3 +1,4 @@
+// Navbar.tsx
 import React, { useState } from "react";
 import "./Navbar.css";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -5,12 +6,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { NavLink, useLocation } from "react-router-dom";
-import { getCardImage, getDescription } from "../../helpers/constants";
+import { getCardImage } from "../../helpers/constants";
 import logo from "../../Assets/images/logo.png";
+
 const Navbar = ({ onGetStartedClick }: any) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hoveredDropdown, setHoveredDropdown] = useState(null);
+  const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const location = useLocation();
+
   const navLinks = [
     { label: "Home", to: "/" },
     {
@@ -18,15 +22,9 @@ const Navbar = ({ onGetStartedClick }: any) => {
       submenu: [
         { label: "Fully Automated Trading Software", to: "/features" },
         { label: "Quick Strategy Guide", to: "/features" },
-        {
-          label: "Real-Time Alerts and Notifications",
-          to: "/features",
-        },
+        { label: "Real-Time Alerts and Notifications", to: "/features" },
         { label: "Optimal Money-Management", to: "/features" },
-        {
-          label: "24/7 Quick Response Support",
-          to: "/features",
-        },
+        { label: "24/7 Quick Response Support", to: "/features" },
       ],
     },
     {
@@ -43,7 +41,14 @@ const Navbar = ({ onGetStartedClick }: any) => {
     { label: "Contact", to: "/contact" },
   ];
 
-  console.log(location,"loc")
+  const toggleMobileDropdown = (label: string) => {
+    setMobileDropdown(mobileDropdown === label ? null : label);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setMobileDropdown(null);
+  };
 
   return (
     <nav className="navbar">
@@ -53,11 +58,11 @@ const Navbar = ({ onGetStartedClick }: any) => {
 
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
         <img src={logo} alt="Logo" className="logo logo-sidebar" />
-        <span className="close-icon-bg" onClick={() => setIsOpen(!isOpen)}>
+        <span className="close-icon-bg" onClick={closeMenu}>
           <CloseIcon />
         </span>
 
-        {navLinks.map((link: any, index: number) => (
+        {navLinks.map((link, index) => (
           <div className="nav-item" key={index}>
             {!link.submenu ? (
               <NavLink
@@ -71,40 +76,40 @@ const Navbar = ({ onGetStartedClick }: any) => {
             ) : (
               <div
                 className="dropdown"
-                onMouseEnter={() => setHoveredDropdown(link.label)}
+                onMouseEnter={() => !isOpen && setHoveredDropdown(link.label)}
               >
-                <span className={
-    link.submenu?.some((sublink: any) => location.pathname.startsWith(sublink.to))
-      ? "link active-link"
-      : "link"
-  }>
+                <span
+                  className={
+                    link.submenu.some((s) =>
+                      location.pathname.startsWith(s.to)
+                    )
+                      ? "link active-link"
+                      : "link"
+                  }
+                  onClick={() => isOpen && toggleMobileDropdown(link.label)}
+                >
                   {link.label}
                   <KeyboardArrowDownIcon
                     style={{ marginLeft: "5px", fontSize: "18px" }}
                   />
                 </span>
 
-                {hoveredDropdown === link.label && (
+                {(hoveredDropdown === link.label ||
+                  mobileDropdown === link.label) && (
                   <div
-                    className="mega-menu"
-                    onMouseLeave={() => setHoveredDropdown(null)}
+                    className={`mega-menu ${isOpen ? "mobile" : ""}`}
+                    onMouseLeave={() => !isOpen && setHoveredDropdown(null)}
                   >
                     <div className="menu-items">
-                      {link.submenu.map((sublink: any, subIndex: any) => (
-                        <NavLink
-                          key={subIndex}
-                          to={sublink.to}
-                          className="menu-card"
-                        >
+                      {link.submenu.map((sublink, subIndex) => (
+                        <NavLink key={subIndex} to={sublink.to} className="menu-card">
                           <div className="card-content">
                             <h4>{sublink.label}</h4>
                           </div>
                           <div
                             className="card-bg"
                             style={{
-                              backgroundImage: `url(${getCardImage(
-                                sublink.label
-                              )})`,
+                              backgroundImage: `url(${getCardImage(sublink.label)})`,
                             }}
                           />
                         </NavLink>
@@ -125,7 +130,7 @@ const Navbar = ({ onGetStartedClick }: any) => {
         </button>
       </div>
 
-      {isOpen && <div className="backdrop" onClick={() => setIsOpen(false)} />}
+      {isOpen && <div className="backdrop" onClick={closeMenu} />}
 
       <div
         className={`hamburger ${isOpen ? "hide" : ""}`}
