@@ -40,7 +40,7 @@ const Carousel = ({setShowForm}:any) => {
             <h2 style={{textAlign:"start"}}>{slide.content}</h2>
           
               <button className="carousel-btn" onClick={() => setShowForm(true)}>
-                Get started
+                Download AI Bot
               </button>
           </div>
           {slide.type === 'video' ? (

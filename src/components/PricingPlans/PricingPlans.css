@@ -1,114 +1,162 @@
+/* Container for all pricing cards */
 .pricing-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 4rem 1rem;
-    background: transparent;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Page heading */
+.pricing-heading {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+/* Individual pricing card */
+.card {
+  position: relative !important;
+  background-color: transparent;
+  border-radius: 18px;
+  padding: 2rem;
+  color: #fff;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid white;
+  overflow: hidden;
+}
+
+/* Hover animation */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+}
+
+/* Card heading */
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+/* Feature list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  z-index: 2;
+  position: relative !important;
+}
+
+/* Check icon */
+.icon-check {
+  width: 18px;
+  height: 18px;
+  stroke: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Subscribe button */
+.subscribe-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #0ea5e9, #3b82f6);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background: linear-gradient(to right, #3b82f6, #0ea5e9);
+}
+
+/* Guarantee text */
+.guarantee {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 0.7rem;
+}
+
+/* Plan categories (color borders) */
+.essential {
+  border-top: 4px solid #38bdf8;
+}
+
+.premium {
+  border-top: 4px solid #60a5fa;
+}
+
+.ultimate {
+  border-top: 4px solid #a78bfa;
+}
+
+/* Top-right image inside card */
+.top-right-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 130px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 1; /* Soft fade */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Assign different images */
+.img-top-right-1 {
+  background-image: url('../../Assets/images/square.png');
+}
+
+.img-top-right-2 {
+  background-image: url('../../Assets/images/satr.png');
+}
+
+.img-top-right-3 {
+  background-image: url('../../Assets/images/dimond.png');
+}
+
+/* Responsive heading spacing */
+@media (max-width: 768px) {
+  .pricing-heading {
+    font-size: 1.5rem;
+    margin: 1.5rem 1rem;
   }
-  .pricing-heading{
-    color: white
-  }
-  
+
   .card {
-    width: 310px;
-    background-color: #1e293b;
-    border-radius: 18px;
-    padding: 2rem;
-    color: #fff;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
+    padding: 1.5rem;
   }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
-  }
-  
-  .card h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .price {
-    font-size: 2.2rem;
-    font-weight: 700;
-  }
-  
-  .price span {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #cbd5e1;
-  }
-  
-  .yearly {
-    font-size: 0.9rem;
-    color: #cbd5e1;
-    margin-top: 0.3rem;
-  }
-  
-  .save {
-    font-size: 0.85rem;
-    color: #38bdf8;
-    margin: 0.8rem 0 1.5rem;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1.8rem;
-  }
-  
-  li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.8rem;
+
+  .subscribe-btn {
     font-size: 0.95rem;
   }
-  
-  .icon-check {
-    width: 18px;
-    height: 18px;
-    stroke: #22c55e;
-    flex-shrink: 0;
+
+  li {
+    font-size: 0.9rem;
   }
-  
-  .subscribe-btn {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(to right, #0ea5e9, #3b82f6);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+
+  .top-right-image {
+    width: 100px;
+    height: 100px;
   }
-  
-  .subscribe-btn:hover {
-    background: linear-gradient(to right, #3b82f6, #0ea5e9);
-  }
-  
-  .guarantee {
-    font-size: 0.75rem;
-    text-align: center;
-    color: #94a3b8;
-    margin-top: 0.7rem;
-  }
-  
-  /* Color classes */
-  .essential {
-    border-top: 4px solid #38bdf8;
-  }
-  
-  .premium {
-    border-top: 4px solid #60a5fa;
-  }
-  
-  .ultimate {
-    border-top: 4px solid #a78bfa;
-  }
-  
+}

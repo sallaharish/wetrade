@@ -43,14 +43,17 @@
   .carousel-btn {
     margin-top: 20px;
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 2rem;
     background-color: #010b24;
     color: white;
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    height: 4.5rem;
+    width: 20rem;
   }
+  
   
   .carousel-btn:hover {
     background-color: #0056b3;
@@ -110,3 +113,4 @@
       top: 60%;
     }
   }
+  

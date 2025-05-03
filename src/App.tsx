@@ -7,6 +7,8 @@ import BG from "./Assets/images/bg.webp"
 import Features from './pages/Features/Features';
 import Faqs from './components/FaqPage/FaqPage';
 import ContactUs from './components/Contact/Contact';
+import { FaWhatsapp } from "react-icons/fa6";
+import WhatsAppAndScrollToTop from './components/WhatsApp/WhatApp';
 
   function App() {
     return (
@@ -18,6 +20,8 @@ import ContactUs from './components/Contact/Contact';
         backgroundColor:"black"
         
       }}>
+        <WhatsAppAndScrollToTop/>
+
         
         <Routes>
           

@@ -12,6 +12,12 @@ import TradingToolsSection from '../../components/TradingTool/TradingTools';
 import Experience from '../../components/Experience/Experience';
 import PopupModal from '../../components/PopupModal/PopupModal';
 import HeroSlider from '../../components/HeroSlider/HeroSlider';
+import PhoneSection from '../../components/PhoneHolding/PhoneHolding';
+import Testimonials from '../../components/Testimonials/Testimonials';
+import AutoSlider from '../../components/AutoSlider/Autoslider';
+import TradingTools from '../../components/TradingTool/TradingTools';
+import SoftwareWorks from '../../components/SoftwareWorks/SoftwareWorks';
+import GridCard from '../../components/GridCard/GridCard';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -32,11 +38,21 @@ function Home() {
         {/* <TradingToolsSection/>   */}
         <Experience/>
         <HeroSlider/>
+        <GridCard/>
+        <PhoneSection/>
+        {/* <Testimonials/> */}
+      
+        {/* <TradingTools/> */}
+        <SoftwareWorks/>
+      
+        
 
-        <AITradingRobot />
-        <AITradingSecondRobot />
-        <FaqSection />
+        {/* <AITradingRobot />
+        <AITradingSecondRobot /> */}
+        
         <PricingPlans />
+        <FaqSection />
+        <AutoSlider/>
       </div>
       {showForm && <PopupModal open={showForm} setOpen={setShowForm}/>}
     </div>

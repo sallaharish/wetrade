@@ -29,7 +29,7 @@
   }
   
   .testimonial-box {
-    background-color: #1e1e1e;
+    background-color:transparent !important;
     border-radius: 20px;
     padding: 2rem;
     max-width: 800px;
@@ -122,5 +122,15 @@
   .avatar:hover {
     opacity: 1;
     border-color: #00ff99;
+  }
+  
+  .testimonials-section {
+    background-color: transparent; /* changed from #121212 */
+    /* rest remains the same */
+  }
+  
+  .testimonial-box {
+    background-color: rgba(30, 30, 30, 0.6); /* semi-transparent box */
+    /* rest remains the same */
   }
   

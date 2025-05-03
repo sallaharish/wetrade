@@ -5,12 +5,13 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';    
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import logo from "../../Assets/images/logo.png";
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-main">
         <div className="footer-col company">
-          <img src="https://www.aitradingsoftware.ae/assets/img/ai-trading-logo-white.png"   alt="AI Trading Software" className="footer-logo" />
+          <img src={logo}   alt="AI Trading Software" className="footer-logo" />
           <p>
             At AI Trading Software, we specialize in AI-driven trading software designed to optimize trading performance with cutting-edge technology.
           </p>

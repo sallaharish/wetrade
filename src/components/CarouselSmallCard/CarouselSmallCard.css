@@ -177,3 +177,51 @@
       flex: 0 0 calc(100% / 3.3);
     }
   }
+  .carousel-card {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 calc(100% / 3.3); /* adjust for visible cards */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    padding: 6px 10px;
+    border-radius: 4px;
+    pointer-events: none; /* prevents hover effects */
+  }
+  
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .carousel-card:hover .card-overlay {
+    opacity: 1;
+  }
+  

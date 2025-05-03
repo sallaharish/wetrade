@@ -1,0 +1,110 @@
+.autoslider-container {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .slider-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  
+  .slider-subheading {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 32px;
+  }
+  
+  .slider {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 25s linear infinite;
+  }
+  
+  .slider-track.paused {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .testimonial-card {
+    min-width: 300px;
+    max-width: 300px;
+    height: 240px; /* Equal height for all cards */
+    background: rgba(255, 255, 255, 0.05); /* Transparent glass effect */
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 24px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 24px;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit text */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .testimonial-text::before {
+    content: "“";
+    font-size: 36px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    color: #ccc;
+    opacity: 0.3;
+  }
+  
+  .testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+  }
+  
+  .user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    color: #fff;
+  }
+  
+  .user-location {
+    font-size: 12px;
+    margin: 0;
+    color: #bbb;
+  }
+  

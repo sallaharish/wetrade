@@ -1,0 +1,146 @@
+/* GridCard.css */
+.lux-card-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background:transparent;
+  }
+  
+  .lux-card-heading {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .lux-card-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+  }
+  
+  .lux-card {
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    min-height: 160px;
+    border: 1px solid white;
+  }
+  
+  .lux-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .lux-card-content {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .lux-card-content h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  .lux-card-content p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .lux-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .lux-card {
+      grid-column: span 2 !important;
+      min-height: 120px !important;
+    }
+  }
+  
+  /* Card-specific classes (optional layout tweaks if needed) */
+  .lux-card-assessment       { grid-column: span 4; grid-row: span 2; }
+  .lux-card-training         { grid-column: span 4; grid-row: span 1; }
+  .lux-card-seo-meetup       { grid-column: span 4; grid-row: span 2; }
+  .lux-card-talent-hub       { grid-column: span 4; grid-row: span 2; }
+  .lux-card-leadership       { grid-column: span 4; grid-row: span 2; }
+  .lux-card-communication    { grid-column: span 4; grid-row: span 1; }
+  .lux-card-talent-pool      { grid-column: span 4; grid-row: span 2; }
+  .lux-card-goals            { grid-column: span 4; grid-row: span 1; }
+  .lux-card-progress         { grid-column: span 4; grid-row: span 1; }
+  .lux-card-churn            { grid-column: span 4; grid-row: span 2; }
+  .lux-card-benchmark        { grid-column: span 4; grid-row: span 1; }
+  .lux-card-insights         { grid-column: span 4; grid-row: span 1; }
+  .lux-card-forecast         { grid-column: span 4; grid-row: span 1; }
+  .lux-card-control-center   { grid-column: span 4; grid-row: span 1; }
+  .lux-card-assessment {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-training {
+    background-image: url('../../Assets/images/hands.png');
+  }
+  
+  .lux-card-seo-meetup {
+    background-image: url('../../Assets/images/lock.png');
+  }
+  
+  .lux-card-talent-hub {
+    background-image:url('../../Assets/images/robo.png');
+  }
+  
+  .lux-card-leadership {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-communication {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-talent-pool {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-goals {
+    background-image:url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-progress {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-churn {
+    background-image:url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-benchmark {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-insights {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-forecast {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
+  .lux-card-control-center {
+    background-image: url('../../Assets/images/AI-graph.png');
+  }
+  
