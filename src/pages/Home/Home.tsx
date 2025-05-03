@@ -50,7 +50,7 @@ function Home() {
         {/* <AITradingRobot />
         <AITradingSecondRobot /> */}
         
-        <PricingPlans />
+        <PricingPlans setShowForm={setShowForm}/>
         <FaqSection />
         <AutoSlider/>
       </div>

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PricingPlans.css";
 import CheckIcon from "../../Icons/CheckIcon";
+import WhyChooseUsModal from "../ChooseUsModal/ChooseUsModal";
+import ChooseUsModal from "../ChooseUsModal/ChooseUsModal";
 
 // Add image imports or URLs
 const imageClasses = ["img-top-right-1", "img-top-right-2", "img-top-right-3"];
@@ -65,7 +67,8 @@ const plans = [
   },
 ];
 
-const PricingPlans = () => {
+const PricingPlans = ({setShowForm}:any) => {
+  const[openModal,setOpenModal]=useState(false);
   return (
     <div>
       <h1 className="pricing-heading">Plans for every style of trading</h1>
@@ -86,12 +89,13 @@ const PricingPlans = () => {
                   </li>
                 ))}
               </ul>
-              <button className="subscribe-btn">Subscribe →</button>
-              <p className="guarantee">Why Choose Us?</p>
+              <button className="subscribe-btn" onClick={()=>setShowForm(true)}>Subscribe →</button>
+              <p className="guarantee" onClick={()=>setOpenModal(true)} style={{cursor:"pointer"}}>Why Choose Us?</p>
             </div>
           );
         })}
       </div>
+{openModal && <ChooseUsModal open={openModal} setOpen={setOpenModal}/>}
     </div>
   );
 };

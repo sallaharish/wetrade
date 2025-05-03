@@ -13,7 +13,6 @@
   .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-  will-change: transform;
   }
   
   .carousel-card {
@@ -64,11 +63,19 @@
     background: rgba(0, 0, 0, 0.7); /* More prominent */
   }
   
-  .card-overlay h3,
-  .card-overlay p {
+  .card-overlay h3 {
     margin: 0;
+    font-size: 18px;
+    font-weight: bold;
   }
   
+  .card-overlay p {
+    margin: 8px 0 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    font-size: 14px;
+  }
   .nav-btn {
     position: absolute;
     top: 50%;
@@ -141,20 +148,19 @@
   /* Overlay hidden by default */
   .card-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    height: 100%;
+    height: auto;
     width: 100%;
     padding: 16px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
   }
-  
   /* Show overlay on hover */
   .carousel-card:hover .card-overlay {
     opacity: 1;
@@ -166,62 +172,25 @@
   }
   
   @media (min-width: 600px) {
-    .carousel-card {
-      flex: 0 0 50%;
-    }
-  }
-  
-  /* Desktop: 3.3 cards per view */
-  @media (min-width: 900px) {
-    .carousel-card {
-      flex: 0 0 calc(100% / 3.3);
-    }
-  }
   .carousel-card {
-    position: relative;
-    overflow: hidden;
-    flex: 0 0 calc(100% / 3.3); /* adjust for visible cards */
-    padding: 10px;
-    box-sizing: border-box;
+    flex: 0 0 50%;
   }
-  
-  .card-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
+}
+
+/* Desktop: 3.3 cards per view */
+@media (min-width: 900px) {
+  .carousel-card {
+    flex: 0 0 calc(100% / 3.3);
   }
-  
-  .card-title {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    z-index: 2;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-    background: transparent;
-    padding: 6px 10px;
-    border-radius: 4px;
-    pointer-events: none; /* prevents hover effects */
-  }
-  
-  .card-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: transparent;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-  }
-  
-  .carousel-card:hover .card-overlay {
-    opacity: 1;
-  }
-  
+}
+
+
+.carousel-card:hover .card-overlay p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight zoom effect on image */
+.carousel-card:hover .card-image {
+  transform: scale(1.05);
+}

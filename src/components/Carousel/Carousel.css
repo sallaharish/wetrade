@@ -112,5 +112,9 @@
       font-size: 1rem;
       top: 60%;
     }
+    .carousel-btn{
+      width:  200px;
+      height: 40px;
+    }
   }
   
