@@ -107,7 +107,7 @@ const Navbar = ({ onGetStartedClick }: any) => {
                         
                         <NavLink key={subIndex} to={sublink.to}   id={`card-${subIndex}`} className="menu-card" style={{
                           backgroundImage: `url(${getCardImage(sublink.label)})`,
-                          backgroundSize: 'cover',
+                          backgroundSize: "105%",
                           backgroundPosition: 'center',
                           backgroundRepeat: 'no-repeat'
                         }}
@@ -118,7 +118,7 @@ const Navbar = ({ onGetStartedClick }: any) => {
                           const element = document.getElementById(`card-${subIndex}`);
                           if (element) {
                             element.style.backgroundImage = `url(${background})`;
-                            element.style.backgroundSize = 'cover'; 
+                            element.style.backgroundSize = '105%'; 
                             element.style.backgroundPosition = 'center'; 
                             element.style.backgroundRepeat = 'no-repeat'; 
                           }
@@ -129,7 +129,7 @@ const Navbar = ({ onGetStartedClick }: any) => {
                           const element = document.getElementById(`card-${subIndex}`);
                           if (element) {
                             element.style.backgroundImage = `url(${originalBackground})`;
-                            element.style.backgroundSize = 'cover';
+                            element.style.backgroundSize = '105%';
                             element.style.backgroundPosition = 'center';
                             element.style.backgroundRepeat = 'no-repeat';
                           }
