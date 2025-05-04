@@ -59,6 +59,14 @@ const ITEMS_PER_VIEW = 3;
 const CarouselSmallCard: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000); // every 5 seconds
+  
+    return () => clearInterval(interval);
+  }, []);
+  
 
 
   const theme = useTheme();
@@ -119,7 +127,7 @@ const VISIBLE_CARDS = isMobile ? 0.95 : isTablet ? 2 : 3.3;
             <div className="carousel-card" key={index}>
               <img src={feature.icon} alt={feature.title} className="card-image" />
               <div className="card-overlay">
-                <h3>{feature.title}</h3>
+                <h3 className="bottom-view">{feature.title}</h3>
                 <p>{feature.description}</p>
               </div>
             </div>
