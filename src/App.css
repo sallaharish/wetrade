@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+
 }
 .lux-whatsapp-float {
   position: fixed;
@@ -23,5 +28,10 @@ html, body {
   width: 100px;
   height: 10rem;
   display: block;
+}
+
+
+body {
+  font-family: 'Inter', sans-serif !important;
 }
 

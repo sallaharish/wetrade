@@ -16,21 +16,39 @@ function PopupModal({ open, setOpen }: any) {
   const theme = useTheme();
   const handleClose = () => setOpen(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
     const formData = new FormData(e.currentTarget);
   
     const name = formData.get('name');
     const email = formData.get('email');
-    const phone = formData.get('phone');
+    const phonenumber = formData.get('phone');
     const city = formData.get('city');
   
-    const message = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ACity: ${city}`;
-    const whatsappURL = `https://wa.me/919000502417?text=${message}`;
+    const payload = {
+      name,
+      email,
+      phonenumber,
+      city
+    };
   
-    window.open(whatsappURL, '_blank');
-    handleClose();
+    await fetch("https://script.google.com/macros/s/AKfycbwSpmVT3ph44Ij9GGA2PinEsoZsx9Ep0ZN7BkGY_N5bCNxEZtFcQ1NMcC1f6QqwssgR/exec", {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Success:", data);
+        alert("Submitted successfully!");
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Submission failed.");
+      });
   };
   
   
@@ -115,7 +133,19 @@ function PopupModal({ open, setOpen }: any) {
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
               InputProps={{ style: { color: '#fff' } }}
-              sx={{border:"1px solid white"}}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'white',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'white', // fixes black border on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#1976d2', // optional: blue border on focus
+                  },
+                },
+              }}
             />
             <TextField
               label="Email"
@@ -126,7 +156,19 @@ function PopupModal({ open, setOpen }: any) {
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
               InputProps={{ style: { color: '#fff' } }}
-              sx={{border:"1px solid white"}}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'white',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'white', // fixes black border on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#1976d2', // optional: blue border on focus
+                  },
+                },
+              }}
             />
             <TextField
               label="Phone Number"
@@ -137,7 +179,19 @@ function PopupModal({ open, setOpen }: any) {
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
               InputProps={{ style: { color: '#fff' } }}
-              sx={{border:"1px solid white"}}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'white',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'white', // fixes black border on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#1976d2', // optional: blue border on focus
+                  },
+                },
+              }}
             />
             <TextField
               label="City"
@@ -147,7 +201,19 @@ function PopupModal({ open, setOpen }: any) {
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
               InputProps={{ style: { color: '#fff' } }}
-              sx={{border:"1px solid white"}}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: 'white',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'white', // fixes black border on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#1976d2', // optional: blue border on focus
+                  },
+                },
+              }}
             />
 
             <Button

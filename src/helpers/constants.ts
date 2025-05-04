@@ -14,8 +14,8 @@ export const getDescription = (label:any) => {
       case "Optimal Money-Management": return "AI Trading Software systematically tracks your open trading positions and closes each out at the optimal profit levels.";
       case "24/7 Quick Response Support": return "24/7 Quick Response Support Our support desk is open 24/7 to answer your questions. We pride ourselves on rapid follow-up often answering questions within one business day.";
       case "Beginner's Guide": return "";
-      case " Back test of Trading Strategy": return "";
-      case " Market Insights & Analysis": return "";
+      case "Back test of Trading Strategy": return "";
+      case "Market Insights & Analysis": return "";
       case "Blog": return "";
       case "About": return "";
       default: return "";
@@ -40,6 +40,21 @@ export const getDescription = (label:any) => {
       case "24/7 Quick Response Support":
         imgPath = dropdownLightImg2;
         break;
+
+      case "Beginner's Guide":
+        imgPath=dropdownLightImg2;
+        break;
+
+      case "Back test of Trading Strategy":
+        imgPath=dropdownLightImg4;
+        break;
+      case "Market Insights & Analysis":
+        imgPath=dropdownLightImg1;
+        break;
+      case "About":
+        imgPath=dropdownLightImg2;
+        break;
+
       default:
         imgPath = dropdownLightImg3;
         break;
@@ -66,6 +81,22 @@ export const getDescription = (label:any) => {
       case "24/7 Quick Response Support":
         imgPath = dropdownDarkImg2;
         break;
+
+      case "Beginner's Guide":
+          imgPath=dropdownDarkImg2;
+          break;
+  
+      case "Back test of Trading Strategy":
+          imgPath=dropdownDarkImg4;
+          break;
+      case "Market Insights & Analysis":
+          imgPath=dropdownDarkImg1;
+          break;  
+
+      case "About":
+        imgPath=dropdownDarkImg2;
+        break;    
+
       default:
         imgPath = dropdownDarkImg3;
         break;

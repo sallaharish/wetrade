@@ -8,12 +8,13 @@ import mainslide5 from "../../Assets/images/Main Slide 5.mp4";
 import { Button } from "@mui/material";
 
 const slides = [
-  { type: "video", src: mainslide1, content: "Smart Trading, Powered by AI." },
+  
   {
     type: "image",
     src: mainslide2,
     content: "Automated Intelligence. Consistent Results.",
   },
+  { type: "video", src: mainslide1, content: "Smart Trading, Powered by AI." },
   {
     type: "video",
     src: mainslide3,
