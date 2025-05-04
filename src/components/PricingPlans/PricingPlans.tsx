@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./PricingPlans.css";
 import CheckIcon from "../../Icons/CheckIcon";
-import WhyChooseUsModal from "../ChooseUsModal/ChooseUsModal";
 import ChooseUsModal from "../ChooseUsModal/ChooseUsModal";
 
-// Add image imports or URLs
+// Add image class names for the cards
 const imageClasses = ["img-top-right-1", "img-top-right-2", "img-top-right-3"];
 
+// Pricing plans data
 const plans = [
   {
     title: "Currency Trading Software (EURUSD & All Currency Market)",
@@ -23,7 +23,6 @@ const plans = [
       "Backtesting Feature ",
       "User-Friendly Dashboard ",
       "Low Latency Execution ",
-      // "Instant License & Setup "
     ],
     colorClass: "essential",
   },
@@ -42,7 +41,7 @@ const plans = [
       "News and Event Alert Filters ",
       "Live Support and Updates ",
       "Minimal Drawdown Strategy ",
-      "One-Time Payment, Lifetime Use "
+      "One-Time Payment, Lifetime Use ",
     ],
     colorClass: "premium",
   },
@@ -61,14 +60,37 @@ const plans = [
       "Cold Wallet Trade Alerts ",
       "Low Fees & High Returns ",
       "Secure and Encrypted ",
-      "Daily Strategy Updates "
+      "Daily Strategy Updates ",
     ],
     colorClass: "ultimate",
   },
 ];
 
-const PricingPlans = ({setShowForm}:any) => {
-  const[openModal,setOpenModal]=useState(false);
+// Reasons for "Why Choose Us?" per plan
+const chooseUs = [
+  {
+    id: 1,
+    text: "Because our system blends AI-driven precision with market fundamentals, helping both new and experienced traders make confident currency trades.",
+  },
+  {
+    id: 2,
+    text: "Because we offer a specialized gold-focused engine with tailored algorithms that outperform generic bots.",
+  },
+  {
+    id: 3,
+    text: "Because we deliver high-tech, safe, and performance-tuned crypto tools that outperform manual trading 90% of the time.",
+  },
+];
+
+const PricingPlans = ({ setShowForm }: any) => {
+  const [openModal, setOpenModal] = useState(false);
+  const [currentReason, setCurrentReason] = useState(0); // Track the index
+
+  const handleWhyChooseUsClick = (index: number) => {
+    setCurrentReason(index);
+    setOpenModal(true);
+  };
+
   return (
     <div>
       <h1 className="pricing-heading">Plans for every style of trading</h1>
@@ -89,13 +111,29 @@ const PricingPlans = ({setShowForm}:any) => {
                   </li>
                 ))}
               </ul>
-              <button className="subscribe-btn" onClick={()=>setShowForm(true)}>Subscribe →</button>
-              <p className="guarantee" onClick={()=>setOpenModal(true)} style={{cursor:"pointer"}}>Why Choose Us?</p>
+              <button className="subscribe-btn" onClick={() => setShowForm(true)}>
+                Subscribe →
+              </button>
+              <p
+                className="guarantee"
+                onClick={() => handleWhyChooseUsClick(index)}
+                style={{ cursor: "pointer" }}
+              >
+                Why Choose Us?
+              </p>
             </div>
           );
         })}
       </div>
-{openModal && <ChooseUsModal open={openModal} setOpen={setOpenModal}/>}
+
+      {/* Modal with dynamic reason */}
+      {openModal && (
+        <ChooseUsModal
+          open={openModal}
+          setOpen={setOpenModal}
+          reason={chooseUs[currentReason]?.text}
+        />
+      )}
     </div>
   );
 };

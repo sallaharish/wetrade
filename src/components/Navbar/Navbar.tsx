@@ -6,8 +6,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { NavLink, useLocation } from "react-router-dom";
-import { getCardImage } from "../../helpers/constants";
+import { getCardImage, getHoverCardImage } from "../../helpers/constants";
 import logo from "../../Assets/images/logo.png";
+
 
 const Navbar = ({ onGetStartedClick }: any) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,16 +104,42 @@ const Navbar = ({ onGetStartedClick }: any) => {
                   >
                     <div className="menu-items">
                       {link.submenu.map((sublink, subIndex) => (
-                        <NavLink key={subIndex} to={sublink.to} className="menu-card">
+                        
+                        <NavLink key={subIndex} to={sublink.to}   id={`card-${subIndex}`} className="menu-card" style={{
+                          backgroundImage: `url(${getCardImage(sublink.label)})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          backgroundRepeat: 'no-repeat'
+                        }}
+                        onMouseEnter={() => console.log(getCardImage(sublink.label),"lll")}  
+                        onMouseOver={() => {
+                          console.log(getHoverCardImage(sublink.label)); 
+                          const background = getHoverCardImage(sublink.label);
+                          const element = document.getElementById(`card-${subIndex}`);
+                          if (element) {
+                            element.style.backgroundImage = `url(${background})`;
+                            element.style.backgroundSize = 'cover'; 
+                            element.style.backgroundPosition = 'center'; 
+                            element.style.backgroundRepeat = 'no-repeat'; 
+                          }
+                        }}
+
+                        onMouseLeave={() => {
+                          const originalBackground = getCardImage(sublink.label);
+                          const element = document.getElementById(`card-${subIndex}`);
+                          if (element) {
+                            element.style.backgroundImage = `url(${originalBackground})`;
+                            element.style.backgroundSize = 'cover';
+                            element.style.backgroundPosition = 'center';
+                            element.style.backgroundRepeat = 'no-repeat';
+                          }
+                        }}
+                      
+                        >
                           <div className="card-content">
                             <h4>{sublink.label}</h4>
                           </div>
-                          <div
-                            className="card-bg"
-                            style={{
-                              backgroundImage: `url(${getCardImage(sublink.label)})`,
-                            }}
-                          />
+                         
                         </NavLink>
                       ))}
                     </div>

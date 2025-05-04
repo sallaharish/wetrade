@@ -1,3 +1,11 @@
+import dropdownDarkImg1 from "../Assets/images/bw 1.png"
+import dropdownDarkImg2 from "../Assets/images/bw 2.png"
+import dropdownDarkImg3 from "../Assets/images/bw 3.png"
+import dropdownDarkImg4 from "../Assets/images/bw 4.png"
+import dropdownLightImg1 from "../Assets/images/color 1.png"
+import dropdownLightImg2 from "../Assets/images/color 2.png"
+import dropdownLightImg3 from "../Assets/images/color 3.png"
+import dropdownLightImg4 from "../Assets/images/color 4.png"
 export const getDescription = (label:any) => {
     switch (label) {
       case "Fully Automated Trading Software": return "Trade 24/7, Effortlessly The complete Automated Trading Software ready for quick-installation. AI Trading Software comes with a quick-install wizard that will walk you through the simple install and configuration process. No additional skills, tools, or downloads are required. Just double-click the wizard, and let it do the rest";
@@ -14,14 +22,54 @@ export const getDescription = (label:any) => {
     }
   };
   
-  export const getCardImage = (label:any) => {
+  export const getCardImage = (label: string) => {
+    let imgPath;
     switch (label) {
-      case "Fully Automated Trading Software": return "/assets/menu/toolkits.png";
-      case "Quick Strategy Guide": return "/assets/menu/screeners.png";
-      case "Real-Time Alerts and Notifications": return "/assets/menu/backtesters.png";
-      case "Optimal Money-Management": return "/assets/menu/ai-assistant.png";
-      case "24/7 Quick Response Support": return "/assets/menu/ai-assistant.png";
-      default: return "/assets/menu/default.png";
+      case "Fully Automated Trading Software":
+        imgPath = dropdownLightImg1;
+        break;
+      case "Quick Strategy Guide":
+        imgPath = dropdownLightImg2;
+        break;
+      case "Real-Time Alerts and Notifications":
+        imgPath = dropdownLightImg3;
+        break;
+      case "Optimal Money-Management":
+        imgPath = dropdownLightImg4;
+        break;
+      case "24/7 Quick Response Support":
+        imgPath = dropdownLightImg2;
+        break;
+      default:
+        imgPath = dropdownLightImg3;
+        break;
     }
+  
+    return imgPath.replace(" ", "%20"); // Handle space in URL
   };
   
+  export const getHoverCardImage = (label: string) => {
+    let imgPath;
+    switch (label) {
+      case "Fully Automated Trading Software":
+        imgPath = dropdownDarkImg1;
+        break;
+      case "Quick Strategy Guide":
+        imgPath = dropdownDarkImg2;
+        break;
+      case "Real-Time Alerts and Notifications":
+        imgPath = dropdownDarkImg3;
+        break;
+      case "Optimal Money-Management":
+        imgPath = dropdownDarkImg4;
+        break;
+      case "24/7 Quick Response Support":
+        imgPath = dropdownDarkImg2;
+        break;
+      default:
+        imgPath = dropdownDarkImg3;
+        break;
+    }
+  
+    return imgPath.replace(" ", "%20"); 
+  };

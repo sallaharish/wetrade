@@ -16,11 +16,25 @@ function PopupModal({ open, setOpen }: any) {
   const theme = useTheme();
   const handleClose = () => setOpen(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+  
+    const formData = new FormData(e.currentTarget);
+  
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const city = formData.get('city');
+  
+    const message = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ACity: ${city}`;
+    const whatsappURL = `https://wa.me/919000502417?text=${message}`;
+  
+    window.open(whatsappURL, '_blank');
     handleClose();
   };
+  
+  
+  
 
   return (
     <div>
@@ -96,6 +110,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="Your Name"
               variant="outlined"
+              name='name'
               required
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
@@ -105,6 +120,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="Email"
               type="email"
+              name="email"
               variant="outlined"
               required
               fullWidth
@@ -115,6 +131,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="Phone Number"
               type="tel"
+              name="phone"
               variant="outlined"
               required
               fullWidth
@@ -125,6 +142,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="City"
               variant="outlined"
+              name="city"
               required
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
