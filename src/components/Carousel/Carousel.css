@@ -116,5 +116,8 @@
       width:  200px;
       height: 40px;
     }
+    .carousel-controls{
+      width: 93%;
+    }
   }
   

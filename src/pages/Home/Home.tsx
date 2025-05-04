@@ -18,9 +18,29 @@ import AutoSlider from '../../components/AutoSlider/Autoslider';
 import TradingTools from '../../components/TradingTool/TradingTools';
 import SoftwareWorks from '../../components/SoftwareWorks/SoftwareWorks';
 import GridCard from '../../components/GridCard/GridCard';
-
+import { Snackbar, Alert } from '@mui/material';
 function Home() {
   const [showForm, setShowForm] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+
+
+  const handleFormSubmitSuccess = () => {
+    setSnackbarMessage('Form submitted successfully!');
+    setSnackbarSeverity('success');
+    setSnackbarOpen(true);
+  };
+
+  const handleFormSubmitError = () => {
+    setSnackbarMessage('There was an issue submitting the form.');
+    setSnackbarSeverity('error');
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
 
   return (
     <div>
@@ -54,7 +74,21 @@ function Home() {
         <FaqSection />
         <AutoSlider/>
       </div>
-      {showForm && <PopupModal open={showForm} setOpen={setShowForm}/>}
+      {showForm && <PopupModal open={showForm} setOpen={setShowForm} onSubmitSuccess={handleFormSubmitSuccess} onSubmitError={handleFormSubmitError} />}
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{
+          vertical: 'top',   
+          horizontal: 'right',
+        }}
+      >
+        <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

@@ -12,59 +12,41 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-function PopupModal({ open, setOpen }: any) {
+function PopupModal({ open, setOpen, onSubmitSuccess, onSubmitError }: any) {
   const theme = useTheme();
+
   const handleClose = () => setOpen(false);
 
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
-    const formData = new FormData(e.currentTarget);
-  
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const phonenumber = formData.get('phone');
-    const city = formData.get('city');
-  
-    const payload = {
-      name,
-      email,
-      phonenumber,
-      city
-    };
-  
-    await fetch("https://script.google.com/macros/s/AKfycbwSpmVT3ph44Ij9GGA2PinEsoZsx9Ep0ZN7BkGY_N5bCNxEZtFcQ1NMcC1f6QqwssgR/exec", {
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const formObject:any= Object.fromEntries(formData.entries());  // Convert FormData to an object
+    const urlEncodedData = new URLSearchParams(formObject).toString();
+
+    fetch("https://formspree.io/f/meogawpp", {
       method: "POST",
-      body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded"
       },
+      body: urlEncodedData,
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log("Success:", data);
-        alert("Submitted successfully!");
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        alert("Submission failed.");
-      });
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      onSubmitSuccess();  // Call success handler in the parent component
+      setOpen(false);
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      onSubmitError();  // Call error handler in the parent component
+    });
   };
-  
-  
-  
 
   return (
     <div>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setOpen(true)}
-        sx={{ fontWeight: 600 }}
-      >
-        Open Modal
-      </Button>
-
       <Dialog
         open={open}
         onClose={handleClose}
@@ -128,7 +110,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="Your Name"
               variant="outlined"
-              name='name'
+              name="Name"
               required
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
@@ -150,7 +132,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="Email"
               type="email"
-              name="email"
+              name="Email"
               variant="outlined"
               required
               fullWidth
@@ -173,7 +155,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="Phone Number"
               type="tel"
-              name="phone"
+              name="Phone Number"
               variant="outlined"
               required
               fullWidth
@@ -185,10 +167,10 @@ function PopupModal({ open, setOpen }: any) {
                     borderColor: 'white',
                   },
                   '&:hover fieldset': {
-                    borderColor: 'white', // fixes black border on hover
+                    borderColor: 'white', 
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: '#1976d2', // optional: blue border on focus
+                    borderColor: '#1976d2', 
                   },
                 },
               }}
@@ -196,7 +178,7 @@ function PopupModal({ open, setOpen }: any) {
             <TextField
               label="City"
               variant="outlined"
-              name="city"
+              name="City"
               required
               fullWidth
               InputLabelProps={{ style: { color: '#ccc' } }}
@@ -207,10 +189,10 @@ function PopupModal({ open, setOpen }: any) {
                     borderColor: 'white',
                   },
                   '&:hover fieldset': {
-                    borderColor: 'white', // fixes black border on hover
+                    borderColor: 'white', 
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: '#1976d2', // optional: blue border on focus
+                    borderColor: '#1976d2', 
                   },
                 },
               }}

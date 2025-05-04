@@ -91,3 +91,11 @@
     background: linear-gradient(90deg, #16a34a, #0f766e);
   }
   
+
+  @media screen and (max-width:768px) {
+
+    .faq-container{
+      margin: 0;
+    }
+    
+  }
