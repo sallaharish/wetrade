@@ -28,7 +28,14 @@
   .footer-col ul {
     padding: 0;
     line-height: 30px;
+    cursor: pointer;
   }
+
+  
+  .footer-col ul li:hover {
+    text-decoration: underline;
+  }
+  
   
   .newsletter {
     display: flex;

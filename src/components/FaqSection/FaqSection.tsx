@@ -1,6 +1,7 @@
 import React from 'react';
 import './FaqSection.css';
 import Navbar from '../Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 import bgVideo1 from  "../../Assets/videos/background1.mp4"
 const faqs = [
@@ -37,6 +38,7 @@ const faqs = [
 ];
 
 const FaqSection: React.FC = () => {
+  const navigate=useNavigate();
   return (
     <div>
        
@@ -54,7 +56,7 @@ const FaqSection: React.FC = () => {
         ))}
       </div>
       <div className="view-more-wrapper">
-        <button className="view-more-btn">View More FAQs</button>
+        <button className="view-more-btn" onClick={()=>navigate("/faq")}>View More FAQs</button>
       </div>
     </section>
     </div>

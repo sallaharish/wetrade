@@ -6,7 +6,9 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';    
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import logo from "../../Assets/images/logo.png";
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+  const navigate=useNavigate();
   return (
     <footer className="footer">
       <div className="footer-main">
@@ -25,8 +27,8 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul>
-            <li>Home</li>
-            <li>FAQ</li>
+            <li onClick={()=>navigate("/")}>Home</li>
+            <li onClick={()=>navigate("/faq")}>FAQ</li>
             <li>Refund Policy</li>
             <li>Live Support</li>
             <li>Coaching</li>
@@ -38,7 +40,7 @@ const Footer = () => {
           <ul>
             <li>Affiliate Program</li>
             <li>Pricing</li>
-            <li>Contact Us</li>
+            <li onClick={()=>navigate("/contact")}>Contact Us</li>
             <li>Privacy Policy</li>
             <li>Terms & Conditions</li>
           </ul>

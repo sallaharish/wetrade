@@ -83,6 +83,35 @@ const Faqs: React.FC = () => {
     setActiveIndex(prev => (prev === index ? null : index));
   };
 
+   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+    
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      const formObject: any = Object.fromEntries(formData.entries());
+      const urlEncodedData = new URLSearchParams(formObject).toString();
+    
+      fetch("https://formspree.io/f/meogawpp", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: urlEncodedData,
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log("Success:", data);
+          handleFormSubmitSuccess()
+          form.reset();
+        })
+        .catch(error => {
+          console.error("Error:", error);
+         handleFormSubmitError();
+        });
+    };
+    
+
   return (
     <div>
        <section className="hero-section-features">
@@ -116,11 +145,11 @@ const Faqs: React.FC = () => {
       ))}
 
       {/* Optional form at the end */}
-      <form className="faq-form">
+      <form className="faq-form" onSubmit={handleSubmit}>
         <h3 className="text-xl font-semibold mb-3">Have another question?</h3>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows={4} placeholder="Your Question" required />
+        <input type="text" placeholder="Your Name" required  name='name'/>
+        <input type="email" placeholder="Your Email" required  name='email'/>
+        <textarea rows={4} placeholder="Your Question" required  name='question'/>
         <button type="submit">Submit Question</button>
       </form>
     </div>
