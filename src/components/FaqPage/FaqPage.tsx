@@ -9,17 +9,50 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is LuxAlgo?",
-    answer: "LuxAlgo is an advanced trading tool designed to improve your decision-making in the market using signals, indicators, and alerts."
+    question: "What is AI Auto Trading Software?",
+    answer: "AI Auto Trading Software uses artificial intelligence and machine learning to analyze market data, identify patterns, and automatically execute trades based on predefined strategies—without manual intervention."
   },
   {
-    question: "How do I get started?",
-    answer: "Sign up on the LuxAlgo website and connect it to your preferred trading platform to begin using its powerful analytics tools."
+    question: "How is AI different from regular automated trading?",
+    answer: "Traditional auto trading uses fixed rules, while AI-based systems can learn from market behavior, adapt over time, and make smarter decisions based on historical and real-time data."
   },
   {
-    question: "Is LuxAlgo beginner-friendly?",
-    answer: "Absolutely. LuxAlgo is designed for both beginners and advanced traders with a clean UI and documentation."
-  }
+    question: "Do I need trading experience to use this software?",
+    answer: "No. Our platform is designed for both beginners and experienced traders. You can choose from prebuilt strategies, run simulations, and access tutorials to get started easily."
+  },
+  {
+    question: "Can I create my own trading strategy?",
+    answer: "Yes. Users can fully customize trading strategies or use the built-in strategy builder to define parameters such as entry/exit points, risk levels, and asset classes—without any coding."
+  },
+  {
+    question: "How secure is the platform?",
+    answer: "Security is a top priority. We use encrypted connections, two-factor authentication (2FA), and broker-level integration to protect your data and funds."
+  },
+  {
+    question: "Can I test strategies before trading with real money?",
+    answer: "Absolutely. The platform includes a backtesting feature to simulate performance using historical data, as well as a demo trading mode to practice with virtual funds."
+  },
+  {
+    question: "Does the software work 24/7?",
+    answer: "Yes. Once activated, your trading bot runs continuously—even when you're offline—ensuring you never miss a market opportunity."
+  },
+  {
+    question: "Can I control risk levels?",
+    answer: "Yes. You can set risk management tools such as stop-loss, take-profit, daily limits, and capital exposure to protect your investment."
+  },
+  {
+    question: "Which brokers are supported?",
+    answer: "We support integration with leading global brokers. A full list is available on the platform’s settings page or upon request."
+  },
+  {
+    question: "How much does the software cost?",
+    answer: "We offer several pricing plans to suit different trader profiles—from free demo accounts to premium packages with advanced features. [View Pricing Plans]"
+  },
+  {
+    question: "Is customer support available?",
+    answer: "Yes. Our expert support team is available 24/7 via live chat, email, and phone to assist you with setup, strategy creation, or troubleshooting."
+  },
+ 
 ];
 
 const Faqs: React.FC = () => {

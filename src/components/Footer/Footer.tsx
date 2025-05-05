@@ -54,12 +54,12 @@ const Footer = () => {
 
       <div className="footer-disclaimer">
         <strong>DISCLAIMER:</strong> <br />
-        AI Trading Software and its employees are not officially qualified to provide financial advice... (shortened for demo)
+        WTS Technologies and its employees are not officially qualified to provide financial advice and are not registered as financial advisors. The only purpose of everything offered on this server, on the WTS Technologies website, or by WTS Technologies and its staff is education. Any losses or damages are not the responsibility or liability of WTS Technologies or its employees. Every risk you take is your responsibility. This website's content should not be interpreted as financial advice.
       </div>
 
       <div className="footer-risk">
         <strong>Risk Warning:</strong> <br />
-        Trading carries a high level of risk and may not be suitable for all investors...
+        Trading carries a high level of risk and may not be suitable for all investors. Profit and loss all depend upon the market movement, As this is automated software, so there is no need for human interruption. If in case there is the possibility of losing your capital, Trading is subjected to market risk, as you buy this software with your own interest, Company won’t be liable for any kind of Profit & Loss of the client.
       </div>
 
       {/* <a href="https://wa.me/971508200684" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
