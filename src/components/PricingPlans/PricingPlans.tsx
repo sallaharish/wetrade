@@ -9,7 +9,7 @@ const imageClasses = ["img-top-right-1", "img-top-right-2", "img-top-right-3"];
 // Pricing plans data
 const plans = [
   {
-    title: "Currency Trading Software (EURUSD & All Currency Market)",
+    title: "Currency Trading Software",
     price: "$24.99",
     yearly: "$299.88 / yr",
     save: "You save 35% a year",
@@ -27,7 +27,7 @@ const plans = [
     colorClass: "essential",
   },
   {
-    title: "Gold Trading Software (XAUUSD)",
+    title: "Gold Trading Software ",
     price: "$39.99",
     yearly: "$479.88 / yr",
     save: "You save 40% a year",
@@ -46,7 +46,7 @@ const plans = [
     colorClass: "premium",
   },
   {
-    title: "Crypto Trading Software (BTC, ETH, etc.)",
+    title: "Crypto Trading Software ",
     price: "$59.99",
     yearly: "$719.88 / yr",
     save: "You save 50% a year",

@@ -8,7 +8,7 @@ const WhatsAppAndScrollToTop = () => {
 
   // Handle WhatsApp button click
   const handleWhatsAppClick = () => {
-    const phoneNumber = '7995511184'; // Replace with actual WhatsApp number
+    const phoneNumber = '+971 526981356'; // Replace with actual WhatsApp number
     const message = encodeURIComponent('Hello, I would like to contact you.');
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
     window.open(whatsappUrl, '_blank');

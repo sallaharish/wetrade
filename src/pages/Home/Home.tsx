@@ -19,6 +19,7 @@ import TradingTools from '../../components/TradingTool/TradingTools';
 import SoftwareWorks from '../../components/SoftwareWorks/SoftwareWorks';
 import GridCard from '../../components/GridCard/GridCard';
 import { Snackbar, Alert } from '@mui/material';
+
 function Home() {
   const [showForm, setShowForm] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -71,6 +72,7 @@ function Home() {
         <AITradingSecondRobot /> */}
         
         <PricingPlans setShowForm={setShowForm}/>
+      
         <FaqSection />
         <AutoSlider/>
       </div>
