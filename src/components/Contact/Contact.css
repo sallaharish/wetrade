@@ -22,7 +22,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 60px;
-    background: var(--bg-color);
+    border-bottom: 1px solid gray;
   }
   
   .contact-info {
@@ -83,7 +83,7 @@
   
   .contact-form input,
   .contact-form textarea {
-    width: 100%;
+    width: 96%;
     padding: 12px 16px;
     margin-bottom: 16px;
     background: var(--input-bg);

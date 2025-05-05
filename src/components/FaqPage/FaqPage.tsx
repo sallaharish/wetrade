@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './FaqPage.css'; // Reference to the CSS I’ll include below
 import Navbar from '../Navbar/Navbar';
 import bgVideo1 from  "../../Assets/videos/background1.mp4"
+import PopupModal from '../PopupModal/PopupModal';
+import { Alert, Snackbar } from '@mui/material';
 type FAQItem = {
   question: string;
   answer: string;
@@ -57,6 +59,25 @@ const faqs: FAQItem[] = [
 
 const Faqs: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [showForm, setShowForm] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+    const handleFormSubmitSuccess = () => {
+      setSnackbarMessage('Form submitted successfully!');
+      setSnackbarSeverity('success');
+      setSnackbarOpen(true);
+    };
+  
+    const handleFormSubmitError = () => {
+      setSnackbarMessage('There was an issue submitting the form.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
+    };
+  
+    const handleSnackbarClose = () => {
+      setSnackbarOpen(false);
+    };
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(prev => (prev === index ? null : index));
@@ -103,6 +124,20 @@ const Faqs: React.FC = () => {
         <button type="submit">Submit Question</button>
       </form>
     </div>
+    {showForm && <PopupModal open={showForm} setOpen={setShowForm} onSubmitSuccess={handleFormSubmitSuccess} onSubmitError={handleFormSubmitError} />}
+      <Snackbar
+            open={snackbarOpen}
+            autoHideDuration={6000}
+            onClose={handleSnackbarClose}
+            anchorOrigin={{
+              vertical: 'top',   
+              horizontal: 'right',
+            }}
+          >
+            <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+              {snackbarMessage}
+            </Alert>
+          </Snackbar>
     </div>
   );
 };

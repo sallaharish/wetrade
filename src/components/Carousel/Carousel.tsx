@@ -32,12 +32,12 @@ const Carousel = ({ setShowForm }: any) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
-  //   useEffect(() => {
-  //     const timer = setInterval(() => {
-  //       setCurrent((prev) => (prev + 1) % length);
-  //     }, 5000);
-  //     return () => clearInterval(timer);
-  //   }, [length]);
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % length);
+      }, 5000);
+      return () => clearInterval(timer);
+    }, [length]);
 
   const goToSlide = (index: number) => setCurrent(index);
   const nextSlide = () => setCurrent((prev) => (prev + 1) % length);

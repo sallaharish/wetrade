@@ -99,6 +99,7 @@ function PopupModal({ open, setOpen, onSubmitSuccess, onSubmitError }: any) {
         <DialogContent sx={{ pt: 1 }}>
           <Box
             component="form"
+            autoComplete='off'
             onSubmit={handleSubmit}
             sx={{
               display: 'flex',

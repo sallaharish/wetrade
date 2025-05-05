@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Features.css";
 import { FaCog, FaChartLine, FaBook, FaCheckCircle } from "react-icons/fa";
 import Grid from "@mui/joy/Grid";
 import Navbar from "../../components/Navbar/Navbar";
 
 import bgVideo1 from  "../../Assets/videos/background1.mp4"
+import PopupModal from "../../components/PopupModal/PopupModal";
+import { Alert, Snackbar } from "@mui/material";
 const features = [
   {
     icon: <FaCog size={32} color="#4caf50" />,
@@ -39,10 +41,29 @@ const features = [
 ];
 
 const Features = () => {
+    const [showForm, setShowForm] = useState(false);
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+      const [snackbarMessage, setSnackbarMessage] = useState('');
+      const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+    const handleFormSubmitSuccess = () => {
+      setSnackbarMessage('Form submitted successfully!');
+      setSnackbarSeverity('success');
+      setSnackbarOpen(true);
+    };
+  
+    const handleFormSubmitError = () => {
+      setSnackbarMessage('There was an issue submitting the form.');
+      setSnackbarSeverity('error');
+      setSnackbarOpen(true);
+    };
+    const handleSnackbarClose = () => {
+      setSnackbarOpen(false);
+    };
+  
   return (
     <div>
       <section className="hero-section-features">
-          <Navbar />
+          <Navbar onGetStartedClick={() => setShowForm(true)}  />
           <video autoPlay muted loop className="background-video-features">
             <source src={bgVideo1} type="video/mp4" />
             Your browser does not support the video tag.
@@ -71,6 +92,20 @@ const Features = () => {
         ))}
       </Grid>
     </section>
+    {showForm && <PopupModal open={showForm} setOpen={setShowForm} onSubmitSuccess={handleFormSubmitSuccess} onSubmitError={handleFormSubmitError} />}
+     <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={6000}
+                onClose={handleSnackbarClose}
+                anchorOrigin={{
+                  vertical: 'top',   
+                  horizontal: 'right',
+                }}
+              >
+                <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+                  {snackbarMessage}
+                </Alert>
+              </Snackbar>
     </div>
   );
 };

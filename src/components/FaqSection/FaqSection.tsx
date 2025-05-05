@@ -48,7 +48,7 @@ const FaqSection: React.FC = () => {
       <div className="faq-grid">
         {faqs.map((faq, idx) => (
           <div className="faq-card" key={idx}>
-            <h4 style={{ color: faq.color }}>{faq.question}</h4>
+            <h3 >{faq.question}</h3>
             <p>{faq.answer}</p>
           </div>
         ))}

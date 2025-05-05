@@ -46,9 +46,9 @@ const Footer = () => {
 
         <div className="footer-col">
           <h3>Contact</h3>
-          <p className='footer-contact'><LocationOnIcon sx={{color:" #8e7cf7"}}/> M1-269, Al Gurg Building Karama, Dubai, UAE.</p>
-          <p  className='footer-contact'><EmailIcon sx={{color:" #8e7cf7"}} /> support@aitrading-software.com</p>
-          <p  className='footer-contact'><PhoneIcon sx={{color:" #8e7cf7"}}/>  +971 508200684</p>
+          <p className='footer-contact'><LocationOnIcon sx={{color:" #8e7cf7"}}/>M02,Titanium Building,Dubai UAE..</p>
+          <p  className='footer-contact'><EmailIcon sx={{color:" #8e7cf7"}} />Support@wtstechnologies.ae</p>
+          <p  className='footer-contact'><PhoneIcon sx={{color:" #8e7cf7"}}/>+971 526981356</p>
         </div>
       </div>
 

@@ -74,7 +74,7 @@
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 1.2rem;
   }
   .nav-btn {
     position: absolute;
@@ -225,7 +225,7 @@
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 1.1rem;
 }
 
 /* Show description on hover */
@@ -257,7 +257,7 @@
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 1.1rem;
 }
 
 /* Show paragraph only on hover */
@@ -284,7 +284,7 @@
 
 /* Title style (always at bottom initially) */
 .card-overlay h3.bottom-view {
-  margin: -108px 8px;
+  position: absolute;
   font-size: 18px;
   font-weight: bold;
   opacity: 1;
@@ -301,7 +301,7 @@
 /* Description (starts hidden) */
 .card-overlay p {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 1.1rem;
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
