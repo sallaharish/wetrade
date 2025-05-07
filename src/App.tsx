@@ -9,6 +9,7 @@ import Faqs from './components/FaqPage/FaqPage';
 import ContactUs from './components/Contact/Contact';
 import { FaWhatsapp } from "react-icons/fa6";
 import WhatsAppAndScrollToTop from './components/WhatsApp/WhatApp';
+import Blogs from './components/Blog/Blog';
 
   function App() {
     return (
@@ -29,6 +30,7 @@ import WhatsAppAndScrollToTop from './components/WhatsApp/WhatApp';
           <Route path='/features' element={<Features/>}/>
           <Route path='/faq' element={<Faqs/>}/>
           <Route path='/contact' element={<ContactUs/>}/>
+          <Route path='/resources/blog' element={<Blogs/>}/>
         </Routes>
         <Footer/>
       </div>

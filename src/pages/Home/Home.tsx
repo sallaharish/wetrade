@@ -19,6 +19,8 @@ import TradingTools from '../../components/TradingTool/TradingTools';
 import SoftwareWorks from '../../components/SoftwareWorks/SoftwareWorks';
 import GridCard from '../../components/GridCard/GridCard';
 import { Snackbar, Alert } from '@mui/material';
+import Blog from '../../components/Blog/Blog';
+import Guide from '../../components/Guide/Guide';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -58,6 +60,8 @@ function Home() {
         </section>
         {/* <TradingToolsSection/>   */}
         <Experience/>
+      
+        <Guide/>
         <HeroSlider/>
         <GridCard/>
         <PhoneSection/>
