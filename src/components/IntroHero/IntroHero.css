@@ -1,0 +1,156 @@
+.intro-hero-wrapper {
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+    color: white;
+    padding: 4rem 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .intro-hero-content {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .intro-subtitle {
+    color: #38bdf8;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  
+  .intro-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1rem 0;
+  }
+  
+  .intro-highlight {
+    background: linear-gradient(to right, #38bdf8, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .intro-description {
+    color: #d1d5db;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  /* ===== Markets Illuminated Section ===== */
+  .market-section {
+    padding: 4rem 2rem;
+    background: radial-gradient(circle at top, #1f2937 0%, #111827 100%);
+    color: #e5e7eb;
+    text-align: center;
+  }
+  
+  .market-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #f9fafb, #d1d5db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .market-card {
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  .market-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+  }
+  
+  .market-text {
+    font-size: 1rem;
+    color: #d1d5db;
+    line-height: 1.6;
+  }
+  
+  /* ===== Anomaly Section ===== */
+  .anomaly-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #1d1f3f, #0f172a);
+    color: #f1f5f9;
+    text-align: center;
+  }
+  
+  .anomaly-header {
+    margin-bottom: 3rem;
+  }
+  
+  .anomaly-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .anomaly-subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .anomaly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .anomaly-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .anomaly-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .anomaly-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+  }
+  
+  .anomaly-card p {
+    font-size: 1rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .intro-title {
+      font-size: 2rem;
+    }
+  
+    .market-heading,
+    .anomaly-title {
+      font-size: 2rem;
+    }
+  
+    .market-text,
+    .anomaly-card p {
+      font-size: 0.95rem;
+    }
+  }
+  

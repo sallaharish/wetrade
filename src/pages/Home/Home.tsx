@@ -21,6 +21,7 @@ import GridCard from '../../components/GridCard/GridCard';
 import { Snackbar, Alert } from '@mui/material';
 import Blog from '../../components/Blog/Blog';
 import Guide from '../../components/Guide/Guide';
+import IntroHero from '../../components/IntroHero/IntroHero';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -61,7 +62,8 @@ function Home() {
         {/* <TradingToolsSection/>   */}
         <Experience/>
       
-        <Guide/>
+        {/* <Guide/> */}
+        <IntroHero/>
         <HeroSlider/>
         <GridCard/>
         <PhoneSection/>

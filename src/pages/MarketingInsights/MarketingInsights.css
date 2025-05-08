@@ -2,10 +2,10 @@
 
 .marketing-container {
     padding: 2rem;
-    background-color: #0f0f0f;
+    background-color: transparent;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
   
   .header {
@@ -55,7 +55,7 @@
   }
   
   .feature-card {
-    background-color: #1a1a1a;
+    background-color: transparent;
     border: 1px solid #333333;
     border-radius: 1rem;
     padding: 1rem;

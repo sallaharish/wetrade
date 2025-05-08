@@ -65,7 +65,7 @@ const MarketingInsights = () => {
     <Navbar onGetStartedClick={() => setShowForm(true)}  />
     <div className="marketing-container">
       <div className="header">
-        <h1 className="main-title">📈 Market Insights & Analysis</h1>
+        <h1 className="main-title">Market Insights & Analysis</h1>
         <p className="subtitle">
           Stay Ahead of the Curve with Smart, Data-Driven Trading
         </p>
@@ -103,11 +103,7 @@ const MarketingInsights = () => {
         </div>
       </div>
 
-      <div className="footer">
-        <p className="footer-text">
-          © {new Date().getFullYear()} Smart Trading Technologies. All rights reserved.
-        </p>
-      </div>
+    
     </div>
      {showForm && <PopupModal open={showForm} setOpen={setShowForm} onSubmitSuccess={handleFormSubmitSuccess} onSubmitError={handleFormSubmitError} />}
          <Snackbar

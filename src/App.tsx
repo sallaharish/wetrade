@@ -12,6 +12,7 @@ import WhatsAppAndScrollToTop from "./components/WhatsApp/WhatApp";
 import Blogs from "./components/Blog/Blog";
 import MarketingInsights from "./pages/MarketingInsights/MarketingInsights";
 import BacktestStrategy from "./pages/BacktestStrategy/BacktestStrategy";
+import Guide from "./components/Guide/Guide";
 
 function App() {
   return (
@@ -41,6 +42,10 @@ function App() {
         <Route
           path="/resources/backtest-strategy"
           element={<BacktestStrategy />}
+        />
+         <Route
+          path="/resources/docs"
+          element={<Guide />}
         />
       </Routes>
       <Footer />

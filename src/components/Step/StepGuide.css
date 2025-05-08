@@ -1,0 +1,170 @@
+.step-guide-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: transparent;
+    min-height: 100vh;
+  }
+  
+  .step-card {
+    background:transparent;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step-item {
+    display: flex;
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .step-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background: white;
+  }
+  
+  .line {
+    height: 100%;
+    width: 2px;
+    background: #ccc;
+    margin-top: 4px;
+  }
+  
+  .step-text {
+    margin-left: 1rem;
+  }
+  
+  .step-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color:white;
+  }
+  
+  .step-desc {
+    font-size: 0.9rem;
+    color: white;
+  }
+  
+  .step-item.active .circle {
+    border-color: #5a4bff;
+    background: #5a4bff;
+  }
+  
+  .step-item.completed .circle {
+    border-color: #5a4bff;
+    background: white;
+  }
+  
+  .step-item.completed .line {
+    background: #5a4bff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .step-card {
+      padding: 1.5rem;
+    }
+  
+    .step-title {
+      font-size: 0.95rem;
+    }
+  
+    .step-desc {
+      font-size: 0.85rem;
+    }
+  }
+  .step-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background: white;
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .line {
+    height: 100%;
+    width: 2px;
+    background: #8a1515;
+    margin-top: -2px; /* pulls line up to look continuous */
+    z-index: 1;
+    color: white;
+  }
+  .line {
+    height: 50px; /* adjust as needed */
+    width: 2px;
+    background: #5a4bff; /* make it clearly visible */
+    margin-top: 2px;
+    z-index: 1;
+  }
+  .head{
+    color: white;
+  }
+  /* Wrapper for aligning left on large screens */
+.step-guide-wrapper {
+    display: flex;
+    justify-content: flex-start; /* Align to left */
+    padding: 2rem 1rem;
+    background: transparent;
+    min-height: 100vh;
+  }
+  
+  /* Container with heading + step content */
+  .step-guide-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Heading */
+  .head {
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .step-guide-wrapper {
+      justify-content: center; /* Center on smaller screens */
+      padding: 1rem;
+    }
+  
+    .step-guide-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+  
