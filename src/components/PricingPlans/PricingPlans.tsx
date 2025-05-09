@@ -98,7 +98,7 @@ const PricingPlans = ({ setShowForm }: any) => {
         {plans.map((plan, index) => {
           const imageClass = imageClasses[index % imageClasses.length];
           return (
-            <div key={index} className={`card ${plan.colorClass}`}>
+            <div key={index} className={`price-card ${plan.colorClass}`}>
               {/* Top-right image */}
               <div className={`top-right-image ${imageClass}`}></div>
 

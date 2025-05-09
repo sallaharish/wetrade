@@ -1,104 +1,143 @@
 import React, { useState } from "react";
-import "./BacktestStrategy.css";
-import backtestImage from "../../Assets/images/backset.png";
-import strategyVideo from "../../Assets/videos/strategy.mp4"
-import Navbar from "../../components/Navbar/Navbar";
-import { Alert, Snackbar } from "@mui/material";
+import { Card, CardContent, Button, Snackbar, Alert } from "@mui/material";
+import "./BacktestStrategy.css"
+import { BarChart, Computer, Timeline, CheckCircle, PlayCircle } from "@mui/icons-material"; // MUI icons
 import PopupModal from "../../components/PopupModal/PopupModal";
+import Navbar from "../../components/Navbar/Navbar";
 
-const BacktestStrategy = () => {
-    const [showForm, setShowForm] = useState(false);
-    const [snackbarOpen, setSnackbarOpen] = useState(false);
-          const [snackbarMessage, setSnackbarMessage] = useState('');
-          const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
-        const handleFormSubmitSuccess = () => {
-          setSnackbarMessage('Form submitted successfully!');
-          setSnackbarSeverity('success');
-          setSnackbarOpen(true);
-        };
-      
-        const handleFormSubmitError = () => {
-          setSnackbarMessage('There was an issue submitting the form.');
-          setSnackbarSeverity('error');
-          setSnackbarOpen(true);
-        };
-        const handleSnackbarClose = () => {
-          setSnackbarOpen(false);
-        };
-      
+export default function BacktestStrategy() {
+  const [showForm, setShowForm] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState<any>("success");
+
+  const handleFormSubmitSuccess = () => {
+    setSnackbarMessage("Form submitted successfully!");
+    setSnackbarSeverity("success");
+    setSnackbarOpen(true);
+  };
+
+  const handleFormSubmitError = () => {
+    setSnackbarMessage("There was an issue submitting the form.");
+    setSnackbarSeverity("error");
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
+
   return (
     <>
-    <div>
-    <Navbar onGetStartedClick={() => setShowForm(true)}  />
-    <div className="backtest-container">
-      <div className="header">
-        <h1 className="main-title">📊 Backtest of Trading Strategy</h1>
-        <p className="subtitle">Validate Before You Trade</p>
-      </div>
+     <Navbar onGetStartedClick={() => setShowForm(true)} />
 
-      <div className="section">
-        <div className="text-block">
-          <p>
-            Before deploying any strategy in live markets, it’s essential to understand how it would have performed under real historical conditions. Our Auto Trading Software includes a robust backtesting engine—empowering traders to optimize and refine strategies with confidence.
-          </p>
-        </div>
-        <img src={backtestImage} alt="Backtest Illustration" className="image-block" />
-      </div>
-
-      <div className="section">
-        <h2 className="section-title">What Is Backtesting?</h2>
-        <p className="description">
-          Backtesting is the process of testing a trading strategy using historical market data to evaluate its effectiveness. It allows traders to simulate performance over past conditions without risking actual capital.
+    <div className="backtesting-container">
+      <header className="backtesting-header">
+        <h1 className="backtesting-title">
+          Backtest Your Trading Strategy
+        </h1>
+        <p className="backtesting-subtitle">
+          Validate Before You Trade
         </p>
-      </div>
+        <p className="backtesting-description">
+          Before deploying any strategy in live markets, it’s essential to
+          understand how it would have performed under real historical
+          conditions. Our Auto Trading Software includes a robust backtesting
+          engine—empowering traders to optimize and refine strategies with
+          confidence.
+        </p>
+      </header>
 
-      <div className="section">
-        <h2 className="section-title">Key Benefits</h2>
-        <ul className="benefits-list">
-          <li>📈 Data-Driven Confidence</li>
-          <li>⚙️ Strategy Optimisation</li>
-          <li>📊 Performance Metrics</li>
-          <li>💡 Avoid Overfitting</li>
-          <li>🧪 Test Before You Deploy</li>
-        </ul>
-      </div>
+      <section className="backtesting-section">
+        <Card className="backtesting-card">
+          <CardContent className="backtesting-card-content">
+            <h2 className="backtesting-card-title">What Is Backtesting?</h2>
+            <p className="backtesting-text">
+              Backtesting is the process of testing a trading strategy using
+              historical market data to evaluate its effectiveness. It allows
+              traders to simulate performance over past conditions without
+              risking actual capital.
+            </p>
+          </CardContent>
+        </Card>
 
-      <div className="video-section">
-        <video className="demo-video" autoPlay muted loop playsInline poster="/assets/demo-thumb.jpg">
-          <source src={strategyVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p className="video-caption">Test Smarter. Trade Better.<br />🎯 Validate strategies with precision | ⚡ Simulate with speed | 📈 Maximise your edge</p>
-        <button className="demo-button">👉 View Demo Results</button>
-      </div>
+        <Card className="backtesting-card">
+          <CardContent className="backtesting-card-content">
+            <h2 className="backtesting-card-title">Key Benefits</h2>
+            <ul className="backtesting-list">
+              <li className="backtesting-list-item">
+                Data-Driven Confidence: Evaluate
+                profitability, risk, and consistency before live execution.
+              </li>
+              <li className="backtesting-list-item">
+                Strategy Optimisation: Fine-tune
+                parameters to improve performance based on measurable outcomes.
+              </li>
+              <li className="backtesting-list-item">
+                Performance Metrics: Analyse
+                ROI, win/loss ratio, drawdowns, Sharpe ratio, and more.
+              </li>
+              <li className="backtesting-list-item">
+               Avoid Overfitting: Test across
+                different market conditions to ensure strategy robustness.
+              </li>
+              <li className="backtesting-list-item">
+               Test Before You Deploy: Mitigate
+                risk by identifying potential flaws or weaknesses early.
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
+      </section>
 
-      <div className="section">
-        <h2 className="section-title">Supported Markets for Backtesting</h2>
-        <ul className="markets-list">
-          <li>Cryptocurrencies (24/7 trading data)</li>
-          <li>Forex Pairs (high liquidity & volatility)</li>
-          <li>Stocks & ETFs</li>
-          <li>Indices & Commodities</li>
-        </ul>
-      </div>
-    </div>
-     {showForm && <PopupModal open={showForm} setOpen={setShowForm} onSubmitSuccess={handleFormSubmitSuccess} onSubmitError={handleFormSubmitError} />}
-         <Snackbar
-                    open={snackbarOpen}
-                    autoHideDuration={6000}
-                    onClose={handleSnackbarClose}
-                    anchorOrigin={{
-                      vertical: 'top',   
-                      horizontal: 'right',
-                    }}
-                  >
-                    <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
-                      {snackbarMessage}
-                    </Alert>
-                  </Snackbar>
+      <section className="backtesting-section">
+        <Card className="backtesting-card">
+          <CardContent className="backtesting-card-content">
+            <h2 className="backtesting-card-title">
+              Supported Markets for Backtesting
+            </h2>
+            <ul className="backtesting-market-list">
+              <li className="market-item">
+                Cryptocurrencies (24/7 trading data)
+              </li>
+              <li className="market-item">Forex Pairs (high liquidity & volatility)</li>
+              <li className="market-item">Stocks & ETFs</li>
+              <li className="market-item">Indices & Commodities</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="backtesting-footer">
+        <h2 className="backtesting-footer-title">Test Smarter. Trade Better.</h2>
+        <p className="backtesting-footer-text">
+          Validate strategies with precision | Simulate with speed | Maximise
+          your edge
+        </p>
+        <Button variant="contained" color="primary" className="start-button">
+          Start Backtesting
+        </Button>
+      </section>
+      {showForm && (
+        <PopupModal
+          open={showForm}
+          setOpen={setShowForm}
+          onSubmitSuccess={handleFormSubmitSuccess}
+          onSubmitError={handleFormSubmitError}
+        />
+      )}
+
+<Snackbar
+      open={snackbarOpen}
+      autoHideDuration={6000}
+      onClose={handleSnackbarClose}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+    >
+      <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: "100%" }}>
+        {snackbarMessage}
+      </Alert>
+    </Snackbar>
     </div>
     </>
   );
-};
-
-export default BacktestStrategy;
+}

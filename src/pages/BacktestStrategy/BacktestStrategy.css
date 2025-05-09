@@ -1,119 +1,138 @@
-.backtest-container {
-    padding: 2rem;
-    margin: auto;
-    font-family: "Segoe UI", sans-serif;
-    color: #fff;
-    margin-top: 3rem;
-    border-bottom: 1px solid gray;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .main-title {
-    font-size: 2.5rem;
-    color: #356ea7;
-  }
-  
-  .subtitle {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
-  .section {
-    margin-bottom: 2.5rem;
-  }
-  
-  .text-block {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-  }
-  
-  .image-block {
-    width: 100%;
-    max-width: 600px;
-    display: block;
-    margin: 1rem auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #1a237e;
-  }
-  
-  .description {
-    font-size: 1rem;
-    color: #e9e2e2;
-    line-height: 1.6;
-  }
-  
-  .benefits-list,
-  .markets-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 1rem;
-  }
-  
-  .benefits-list li,
-  .markets-list li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    font-size: 1rem;
-  }
-  
-  .benefits-list li::before,
-  .markets-list li::before {
-    content: '✔';
-    position: absolute;
-    left: 0;
-    color: #2e7d32;
-    font-weight: bold;
-  }
-  
-  .video-section {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  
-  .demo-video {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
-  }
-  
-  .video-caption {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    color: white;
-  }
-  
-  .demo-button {
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    background-color: #2962ff;
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .demo-button:hover {
-    background-color: #0039cb;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .main-title {
-      font-size: 2rem;
-    }
-  }  
+/* Black theme styles for the entire container */
+.backtesting-container {
+  padding: 2rem;
+  color: white; /* Light text color for contrast */
+  width: 90%;
+  margin-top: 4rem;
+}
+
+.header-box {
+  background: linear-gradient(135deg, #0D47A1, #1976D2);
+  color: white;
+  border-radius: 16px;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.header-title {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.video-container {
+  text-align: center;
+}
+
+.video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button {
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Styling for cards */
+.MuiCard-root {
+  background-color: #333; /* Dark card background */
+  color: white; /* Light text inside the card */
+  border-radius: 12px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Darker shadow for better contrast */
+  margin: 1rem 0;
+}
+
+.MuiCardContent-root {
+  padding: 1.5rem; /* Adding padding to the content */
+}
+
+.MuiTypography-titleMd {
+  font-weight: bold; /* Bold title text */
+  color: #fff; /* White title text */
+}
+
+.MuiTypography-bodySm {
+  color: #ddd; /* Slightly lighter text color for descriptions */
+}
+
+/* List of supported markets */
+.supported-markets {
+  list-style: none;
+  padding-left: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ddd; /* Light text for list items */
+}
+
+.supported-markets li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.supported-markets li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2e7d32; /* Green check mark */
+  font-weight: bold;
+}
+
+.backtesting-card{
+  background: linear-gradient(to right, #1d1f3f, #0f172a) !important;
+  color: white !important;
+  border-radius: 10px !important;
+
+}
+.backtesting-card :hover{
+  background: linear-gradient(to right, #2f325f, #0f172a) !important;
+}
+
+.backtesting-list-item::before {
+  content: "✔"; /* You can change this to any character or use an image */
+  position: absolute;
+  left: -20px; /* Adjust position to fit your design */
+  color: #2e7d32; /* Green color for the bullet */
+  font-weight: bold;
+  font-size: 1.2rem; /* Adjust size */
+}
+
+.backtesting-list {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 10px /* Remove left padding */
+}
+
+.backtesting-list-item {
+  position: relative;
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+/* Styling for the market list */
+.backtesting-market-list {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 10px; /* Remove left padding */
+}
+
+.market-item {
+  position: relative;
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+.market-item::before {
+  content: "•"; /* Circle bullet */
+  position: absolute;
+  left: -20px; /* Adjust position */
+  color: #1976D2; /* Custom color for bullets (blue) */
+  font-size: 1.5rem; /* Adjust size */
+}

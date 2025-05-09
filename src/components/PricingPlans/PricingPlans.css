@@ -18,7 +18,7 @@
 }
 
 /* Individual pricing card */
-.card {
+.price-card {
   position: relative !important;
   background-color: transparent;
   border-radius: 18px;
@@ -31,13 +31,13 @@
 }
 
 /* Hover animation */
-.card:hover {
+.price-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
 }
 
 /* Card heading */
-.card h3 {
+.price-card h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   z-index: 2;

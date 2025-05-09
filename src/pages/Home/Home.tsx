@@ -22,6 +22,7 @@ import { Snackbar, Alert } from '@mui/material';
 import Blog from '../../components/Blog/Blog';
 import Guide from '../../components/Guide/Guide';
 import IntroHero from '../../components/IntroHero/IntroHero';
+import PaymentCards from '../../components/PaymentCards/PaymentCards';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -72,7 +73,7 @@ function Home() {
         {/* <TradingTools/> */}
         <SoftwareWorks/>
       
-        
+          <PaymentCards/>
 
         {/* <AITradingRobot />
         <AITradingSecondRobot /> */}
