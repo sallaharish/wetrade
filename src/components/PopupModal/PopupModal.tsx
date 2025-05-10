@@ -212,7 +212,7 @@ function PopupModal({ open, setOpen, onSubmitSuccess, onSubmitError }: any) {
                 bgcolor: '#1976d2',
               }}
             >
-              Submit
+             Download AI Bot
             </Button>
           </Box>
         </DialogContent>
