@@ -6,6 +6,8 @@
     position: relative;
     text-align: left !important;
   }
+
+ 
   
   .footer-main {
     display: grid;
@@ -21,7 +23,7 @@
   .footer-col p,
   .footer-col li {
     color: #ccc;
-    margin: 0.3rem 0;
+    margin: 0.5rem 0;
     list-style: none;
   }
   

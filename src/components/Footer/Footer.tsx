@@ -40,7 +40,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="footer-col">
+        {/* <div className="footer-col">
           <h3>Services</h3>
           <ul>
             <li>Affiliate Program</li>
@@ -49,7 +49,7 @@ const Footer = () => {
             <li>Privacy Policy</li>
             <li>Terms & Conditions</li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="footer-col">
           <h3>Contact</h3>
