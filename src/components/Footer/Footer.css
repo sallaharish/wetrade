@@ -169,4 +169,26 @@
       bottom: 80px;
     }
   }
+  .footer-social {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    background-color: #8e7cf7;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  .footer-social a:hover {
+    background-color: #6e5dd3;
+  }
   

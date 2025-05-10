@@ -1,5 +1,5 @@
 .intro-hero-wrapper {
-    background: linear-gradient(to bottom right, #111827, #1f2937);
+    background: transparent;
     color: white;
     padding: 4rem 2rem;
     font-family: 'Segoe UI', sans-serif;
@@ -40,9 +40,10 @@
   /* ===== Markets Illuminated Section ===== */
   .market-section {
     padding: 4rem 2rem;
-    background: radial-gradient(circle at top, #1f2937 0%, #111827 100%);
+    background: transparent;
     color: #e5e7eb;
     text-align: center;
+    /* border: 2px solid white; */
   }
   
   .market-heading {
@@ -52,6 +53,7 @@
     background: linear-gradient(to right, #f9fafb, #d1d5db);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* background: 2px solid white; */
   }
   
   .market-grid {
@@ -60,16 +62,18 @@
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    /* border: 1px solid white; */
   }
   
   .market-card {
     text-align: left;
     padding: 1rem;
+    border: 1px solid white;
   }
   
   .market-icon {
-    width: 40px;
-    height: 40px;
+    width: 60;
+    height: 80px;
     margin-bottom: 1rem;
   }
   
@@ -82,9 +86,11 @@
   /* ===== Anomaly Section ===== */
   .anomaly-section {
     padding: 4rem 2rem;
-    background: linear-gradient(to right, #1d1f3f, #0f172a);
+    background: transparent;
     color: #f1f5f9;
     text-align: center;
+    box-shadow: #d1d5db;
+    /* border: 1px solid blue; */
   }
   
   .anomaly-header {
@@ -113,12 +119,13 @@
   }
   
   .anomaly-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: transparent;
     padding: 2rem;
     border-radius: 1rem;
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    border: 1px solid cornflowerblue;
   }
   
   .anomaly-card:hover {
@@ -126,8 +133,8 @@
   }
   
   .anomaly-icon {
-    width: 40px;
-    height: 40px;
+    width: 220px;
+    height: 111px;
     margin-bottom: 1rem;
   }
   
@@ -151,6 +158,27 @@
     .market-text,
     .anomaly-card p {
       font-size: 0.95rem;
+    }
+  }
+  .market-icon {
+    width: 12vw;
+    height: auto;
+    max-width: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Optional: Tweak on very small screens */
+  @media (max-width: 600px) {
+    .market-icon {
+      width: 20vw;
+      max-width: 60px;
+    }
+  }
+  
+  /* Optional: Tweak for large desktop screens */
+  @media (min-width: 1200px) {
+    .market-icon {
+      width: 100px;
     }
   }
   

@@ -23,6 +23,7 @@ import Blog from '../../components/Blog/Blog';
 import Guide from '../../components/Guide/Guide';
 import IntroHero from '../../components/IntroHero/IntroHero';
 import PaymentCards from '../../components/PaymentCards/PaymentCards';
+import TermsAndConditions from '../TermsAndConditions/TermsAndConditions';
 
 function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -62,9 +63,10 @@ function Home() {
         </section>
         {/* <TradingToolsSection/>   */}
         <Experience/>
+        {/* <TermsAndConditions/> */}
       
         {/* <Guide/> */}
-        <IntroHero/>
+        
         <HeroSlider/>
         <GridCard/>
         <PhoneSection/>

@@ -3,7 +3,7 @@ import "./Carousel.css";
 import mainslide1 from "../../Assets/images/Main Slide 1.mp4";
 import mainslide2 from "../../Assets/images/Main Slide 2.jpg";
 import mainslide3 from "../../Assets/images/Main Slide 3.mp4";
-import mainslide4 from "../../Assets/images/Main Slide 4.jpg";
+import mainslide4 from "../../Assets/images/Slide-4-change-other.jpg";
 import mainslide5 from "../../Assets/images/Main Slide 5.mp4";
 import { Button } from "@mui/material";
 

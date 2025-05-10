@@ -89,7 +89,7 @@
   .lux-card-forecast         { grid-column: span 4; grid-row: span 1; }
   .lux-card-control-center   { grid-column: span 4; grid-row: span 1; }
   .lux-card-assessment {
-    background-image: url('../../Assets/images/AI-graph.png');
+    background-image: url('../../Assets/images/robo.png');
   }
   
   .lux-card-training {
@@ -97,15 +97,15 @@
   }
   
   .lux-card-seo-meetup {
-    background-image: url('../../Assets/images/lock.png');
+    background-image: url('../../Assets/images/innovation-another.jpg');
   }
   
   .lux-card-talent-hub {
-    background-image:url('../../Assets/images/robo.png');
+    background-image:url('../../Assets/images/lock.png');
   }
   
   .lux-card-leadership {
-    background-image: url('../../Assets/images/AI-graph.png');
+    background-image: url('../../Assets/images/efficiency-another.jpg');
   }
   
   .lux-card-communication {
@@ -117,23 +117,23 @@
   }
   
   .lux-card-goals {
-    background-image:url('../../Assets/images/Consistancy.jpg');
+    background-image:url('../../Assets/images/Consistancy-other.jpg');
   }
   
   .lux-card-progress {
-    background-image: url('../../Assets/images/Performance.jpg');
+    background-image: url('../../Assets/images/Performance-other.jpg');
   }
   
   .lux-card-churn {
-    background-image:url('../../Assets/images/Flexibility.jpg');
+    background-image:url('../../Assets/images/Flexibility-other.jpg');
   }
   
   .lux-card-benchmark {
-    background-image: url('../../Assets/images/Learning.jpg');
+    background-image: url('../../Assets/images/Learning-other.jpg');
   }
   
   .lux-card-insights {
-    background-image: url('../../Assets/images/RISK\ MANAGEMENT.jpg');
+    background-image: url('../../Assets/images/RISK-MANAGEMENT-other.jpg  ');
   }
   
   .lux-card-forecast {

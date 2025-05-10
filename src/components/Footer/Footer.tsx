@@ -7,6 +7,9 @@ import EmailIcon from '@mui/icons-material/Email';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import logo from "../../Assets/images/logo.png";
 import { useNavigate } from 'react-router-dom';
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import TermsAndConditions from '../../pages/TermsAndConditions/TermsAndConditions';
+
 const Footer = () => {
   const navigate=useNavigate();
   return (
@@ -29,7 +32,9 @@ const Footer = () => {
           <ul>
             <li onClick={()=>navigate("/")}>Home</li>
             <li onClick={()=>navigate("/faq")}>FAQ</li>
-            <li>Refund Policy</li>
+            <li onClick={()=>navigate("/terms-and-conditions")}>TermsAndConditions  </li>
+            
+            <li onClick={()=>navigate("/refund-policy")}>RefundPolicy </li>
             <li>Live Support</li>
             <li>Coaching</li>
           </ul>
@@ -79,10 +84,21 @@ const Footer = () => {
       <div className="footer-bottom">
   <hr />
   <div className="footer-bottom-content">
-    <p className="footer-left">© 2024 AI Trading Software</p>
-    <p className="footer-right">Designed and developed by AI Trading Software</p>
+    <p className="footer-left">© 2025 WTS Technoligies Software</p>
+    <p className="footer-right">Designed and developed by WTS Technologies </p>
   </div>
 </div>
+<div className="footer-social">
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands"><FaFacebookF /></i></a>
+  <a href="https://www.instagram.com/wetradesolutions/" target="_blank" rel="noopener noreferrer">
+  <i className="fa-brands"><FaInstagram /></i>
+</a>
+
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands"><FaTwitter /></i></a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands"><FaLinkedinIn /></i></a>
+</div>
+
+
 
     </footer>
   );

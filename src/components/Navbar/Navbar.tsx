@@ -35,7 +35,7 @@ const Navbar = ({ onGetStartedClick }: any) => {
         { label: "Market Insights & Analysis", to: "/resources/marketing-insights" },
         { label: "Back test of Trading Strategy", to: "/resources/backtest-strategy" },
         { label: "Blog", to: "/resources/blog" },
-        { label: "About", to: "/resources/docs" },
+        { label: "About", to: "/resources/about" },
       ],
     },
     { label: "FAQ", to: "/faq" },
