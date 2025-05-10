@@ -30,6 +30,8 @@ function App() {
         // backgroundPosition: 'center',
         // backgroundRepeat: 'no-repeat',
         backgroundColor: "black",
+        width:"100%",
+        overflow:"hidden"
       }}
     >
       <WhatsAppAndScrollToTop />

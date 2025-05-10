@@ -74,8 +74,8 @@
   }
   
   .feature-list {
-    padding-left: 1.25rem;
     color: #cccccc;
+    text-align: left;
   }
   
   .icon {
