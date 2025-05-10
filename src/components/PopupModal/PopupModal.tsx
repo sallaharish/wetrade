@@ -22,10 +22,10 @@ function PopupModal({ open, setOpen, onSubmitSuccess, onSubmitError }: any) {
   
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const formObject:any= Object.fromEntries(formData.entries());  // Convert FormData to an object
+    const formObject:any= Object.fromEntries(formData.entries());  
     const urlEncodedData = new URLSearchParams(formObject).toString();
 
-    fetch("https://formspree.io/f/meogawpp", {
+    fetch("https://formspree.io/f/mrbqlvao", {
       method: "POST",
       headers: {
         "Accept": "application/json",

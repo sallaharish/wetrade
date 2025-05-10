@@ -33,7 +33,7 @@ const [snackbarOpen, setSnackbarOpen] = useState(false);
     const formObject: any = Object.fromEntries(formData.entries());
     const urlEncodedData = new URLSearchParams(formObject).toString();
   
-    fetch("https://formspree.io/f/meogawpp", {
+    fetch("https://formspree.io/f/mrbqlvao", {
       method: "POST",
       headers: {
         "Accept": "application/json",
@@ -97,7 +97,7 @@ const [snackbarOpen, setSnackbarOpen] = useState(false);
 
       <div className="contact-form">
         <h3>Send Us a Message</h3>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete='off'>
           <input type="text" placeholder="Your Name" required  name="name"/>
           <input type="email" placeholder="Your Email" required  name="email"/>
           <textarea placeholder="Your Message" rows={5} required name="message"></textarea>

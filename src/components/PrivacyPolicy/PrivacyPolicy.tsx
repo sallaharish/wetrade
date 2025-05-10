@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
   return (
     <>
     <Navbar onGetStartedClick={() => setShowForm(true)}  />
-    <Container maxWidth="md" sx={{ py: 5,marginTop:"4rem",marginLeft:0 }}>
+    <Container maxWidth="md" sx={{ py: 5,marginTop:"4rem",marginLeft:0 ,borderBottom:"1px solid gray"}}>
       <Typography variant="h3" gutterBottom>
         Privacy Policy
       </Typography>
@@ -213,6 +213,7 @@ We also collect data automatically through technologies like cookies and log fil
                 </Alert>
               </Snackbar>
     </Container>
+    <br/>
     </>
   );
 };

@@ -91,7 +91,7 @@ const Faqs: React.FC = () => {
       const formObject: any = Object.fromEntries(formData.entries());
       const urlEncodedData = new URLSearchParams(formObject).toString();
     
-      fetch("https://formspree.io/f/meogawpp", {
+      fetch("https://formspree.io/f/mrbqlvao", {
         method: "POST",
         headers: {
           "Accept": "application/json",
@@ -145,7 +145,7 @@ const Faqs: React.FC = () => {
       ))}
 
       {/* Optional form at the end */}
-      <form className="faq-form" onSubmit={handleSubmit}>
+      <form className="faq-form" onSubmit={handleSubmit} autoComplete='off'>
         <h3 className="text-xl font-semibold mb-3">Have another question?</h3>
         <input type="text" placeholder="Your Name" required  name='name'/>
         <input type="email" placeholder="Your Email" required  name='email'/>
