@@ -115,7 +115,7 @@ const Faqs: React.FC = () => {
   return (
     <div>
        <section className="hero-section-features">
-                <Navbar />
+                <Navbar onGetStartedClick={() => setShowForm(true)}   />
                 <video autoPlay muted loop className="background-video-features">
                   <source src={bgVideo1} type="video/mp4" />
                   Your browser does not support the video tag.

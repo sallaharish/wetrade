@@ -35,7 +35,7 @@ const Footer = () => {
             <li onClick={()=>navigate("/terms-and-conditions")}>TermsAndConditions  </li>
             
             <li onClick={()=>navigate("/refund-policy")}>RefundPolicy </li>
-            <li>Live Support</li>
+            <li onClick={()=>navigate("/privacy-policy")}>Privacy Policy</li>
             <li>Coaching</li>
           </ul>
         </div>
@@ -60,19 +60,15 @@ const Footer = () => {
       </div>
 
       <div className="footer-disclaimer">
-        <strong>Privacy Policy:</strong> <br />
-        WTS Technologies respects your right to privacy. This Privacy Policy explains who we are, how we collect, share and use personal information about you, and how you can exercise your privacy rights. This Privacy Policy applies to personal information that we collect via our website (available at wtstechnologies.ae), mobile applications, our services including our platforms, and our controlled widgets embedded in communication platforms and related support services Sites.
+        <strong>Disclaimer:</strong> <br />
+        WTS Technologies and its employees are not officially qualified to provide financial advice and are not registered as financial advisors. The only purpose of everything offered on this server, on the WTS Technologies website, or by WTS Technologies and its staff is education. Any losses or damages are not the responsibility or liability of WTS Technologies or its employees. Every risk you take is your responsibility. This website's content should not be interpreted as financial advice.
       </div>
 
       <div className="footer-risk">
-        <strong>Refund Policy:</strong> <br />
-        WTS Technologies, we are committed to providing a high-quality experience for our users. This Refund Policy outlines the terms and conditions under which we offer refunds for the purchase of our Auto Trading Software. By purchasing and using the Software, you agree to the following terms.
+        <strong>Risk Warning:</strong> <br />
+        Trading carries a high level of risk and may not be suitable for all investors. Profit and loss all depend upon the market movement, As this is automated software, so there is no need for human interruption. If in case happen there is the possibility to lose your capital, Trading is subjected to market risk, as you buy this software with your own interest, Company won’t be liable for any kind of Profit & Loss of the client.
       </div>
-      <div className="footer-risk">
-        <strong>Terms & Conditions :</strong> <br />
-        This website is operated by wtstechnologies.ae Throughout the site, the terms "we", "us" and "our" refer to WTS Technologies sinryadvice offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here..
-      </div>
-
+    
       {/* <a href="https://wa.me/971508200684" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <WhatsAppIcon/>
         <span>Need Assistance?<br />WhatsApp</span>

@@ -18,6 +18,8 @@ import h8 from "../../Assets/images/h8.jpg";
 import h9 from "../../Assets/images/h9.jpg";
 import h10 from "../../Assets/images/h10.jpg";
 import Navbar from '../Navbar/Navbar';
+import PopupModal from '../PopupModal/PopupModal';
+import { Alert, Snackbar } from '@mui/material';
 
 
 interface Article {
@@ -137,6 +139,24 @@ const technicalAnalysis = [
 
 const Blogs: React.FC = () => {
     const [showForm, setShowForm] = useState(false);
+      const [snackbarOpen, setSnackbarOpen] = useState(false);
+        const [snackbarMessage, setSnackbarMessage] = useState('');
+        const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success');
+        const handleFormSubmitSuccess = () => {
+          setSnackbarMessage('Form submitted successfully!');
+          setSnackbarSeverity('success');
+          setSnackbarOpen(true);
+        };
+      
+        const handleFormSubmitError = () => {
+          setSnackbarMessage('There was an issue submitting the form.');
+          setSnackbarSeverity('error');
+          setSnackbarOpen(true);
+        };
+      
+        const handleSnackbarClose = () => {
+          setSnackbarOpen(false);
+        };
     return (
         <div>
             <Navbar onGetStartedClick={() => setShowForm(true)} />
@@ -195,6 +215,20 @@ const Blogs: React.FC = () => {
             <ArticleSection heading="Strategies & Tips" articles={strategiesTips} />
             <ArticleSection heading="Technical Analysis" articles={technicalAnalysis} />
         </div>
+         {showForm && <PopupModal open={showForm} setOpen={setShowForm} onSubmitSuccess={handleFormSubmitSuccess} onSubmitError={handleFormSubmitError} />}
+              <Snackbar
+                    open={snackbarOpen}
+                    autoHideDuration={6000}
+                    onClose={handleSnackbarClose}
+                    anchorOrigin={{
+                      vertical: 'top',   
+                      horizontal: 'right',
+                    }}
+                  >
+                    <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+                      {snackbarMessage}
+                    </Alert>
+                  </Snackbar>
         </div>
     );
 };

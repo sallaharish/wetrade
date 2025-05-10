@@ -18,6 +18,7 @@ import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
 
 import ScrollToTop from "./components/ScrollTop";
 import RefundPolicy from "./pages/Home/RefundPolicy/RefundPolicy";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions/>}/>
         <Route path="/refund-policy" element={<RefundPolicy/>}/>
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
         <Route path="/resources/blog" element={<Blogs />} />
         <Route
           path="/resources/marketing-insights"
