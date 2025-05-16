@@ -21,7 +21,7 @@ const PaymentCards = () => {
     <div className="payment-container">
 
     <h1>
-            Quick Withdrawal with local payment options
+          local payment options
         </h1>
     <div className="cards-container">
         

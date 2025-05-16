@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Fab } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'; // Icon for the scroll to top button
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const WhatsAppAndScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  // Detect iOS device
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
+
+
   // Handle WhatsApp button click
   const handleWhatsAppClick = () => {
-    const phoneNumber = '+971 526981356'; // Replace with actual WhatsApp number
+    const phoneNumber = '971526981356'; // Remove '+' sign
     const message = encodeURIComponent('Hello, I would like to contact you.');
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    if (isIOS) {
+      window.location.href = whatsappUrl;
+    } else {
+      window.open(whatsappUrl, '_blank');
+    }
   };
 
   // Show scroll-to-top button when the page is scrolled down
@@ -54,14 +63,14 @@ const WhatsAppAndScrollToTop = () => {
           sx={{
             backgroundColor: '#25D366',
             color: '#fff',
-            width: '60px',  // Adjusted size
-            height: '60px', // Adjusted size
+            width: '60px',
+            height: '60px',
             '&:hover': {
               backgroundColor: '#128C7E',
             },
           }}
         >
-          <WhatsAppIcon sx={{ fontSize: '2rem' }} /> {/* Smaller icon size */}
+          <WhatsAppIcon sx={{ fontSize: '2rem' }} />
         </Fab>
       </Box>
 
@@ -70,7 +79,7 @@ const WhatsAppAndScrollToTop = () => {
         <Box
           sx={{
             position: 'fixed',
-            bottom: '90px', // Adjusted gap between the two buttons
+            bottom: '90px',
             right: '20px',
             zIndex: 1000,
           }}
@@ -82,14 +91,14 @@ const WhatsAppAndScrollToTop = () => {
             sx={{
               backgroundColor: 'rgb(225, 36, 84)',
               color: '#fff',
-              width: '60px',  // Adjusted size
-              height: '60px', // Adjusted size
+              width: '60px',
+              height: '60px',
               '&:hover': {
                 backgroundColor: '#0056b3',
               },
             }}
           >
-            <ArrowUpwardIcon sx={{ fontSize: '2rem' }} /> {/* Smaller icon size */}
+            <ArrowUpwardIcon sx={{ fontSize: '2rem' }} />
           </Fab>
         </Box>
       )}
