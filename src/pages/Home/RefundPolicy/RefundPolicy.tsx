@@ -59,7 +59,7 @@ const RefundPolicy: React.FC = () => {
 
         <h2>3. Requesting a Refund</h2>
         <p>
-          To request a refund under the conditions outlined above, you must contact our customer support team at <a href="mailto:info@technosoft-lab.com">info@technosoft-lab.com</a>.
+          To request a refund under the conditions outlined above, you must contact our customer support team at <a href="mailto:info@technosoft-lab.com">support@wtstechnologies.ae</a>.
         </p>
         <p>Please provide the following information in your refund request:</p>
         <ul>
