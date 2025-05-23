@@ -53,9 +53,9 @@ const Footer = () => {
 
         <div className="footer-col">
           <h3>Contact</h3>
-          <p className='footer-contact'><LocationOnIcon sx={{color:" #8e7cf7"}}/>M02,Titanium Building,Dubai UAE..</p>
-          <p  className='footer-contact'><EmailIcon sx={{color:" #8e7cf7"}} />Support@wtstechnologies.ae</p>
-          <p  className='footer-contact'><PhoneIcon sx={{color:" #8e7cf7"}}/>+971 526981356</p>
+          <p className='footer-contact'><LocationOnIcon sx={{color:"#00bfff"}}/>M02,Titanium Building,Dubai UAE..</p>
+          <p  className='footer-contact'><EmailIcon sx={{color:"#00bfff"}} />Support@wtstechnologies.ae</p>
+          <p  className='footer-contact'><PhoneIcon sx={{color:"#00bfff"}}/>+971 526981356</p>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ const Footer = () => {
   </div>
 </div>
 <div className="footer-social">
-  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fa-brands"><FaFacebookF /></i></a>
+  <a href="https://www.facebook.com/WTSTechnologies" target="_blank" rel="noopener noreferrer"><i className="fa-brands"><FaFacebookF /></i></a>
   <a href="https://www.instagram.com/wetradesolutions/" target="_blank" rel="noopener noreferrer">
   <i className="fa-brands"><FaInstagram /></i>
 </a>

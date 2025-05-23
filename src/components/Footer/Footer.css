@@ -55,7 +55,7 @@
   }
   
   .newsletter button {
-    background: #8e7cf7;
+    background:#00bfff !important;
     border: none;
     padding: 0 1rem;
     border-radius: 10px;
@@ -101,7 +101,7 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #8e7cf7;
+    background: #00bfff;
     color: white;
     border: none;
     padding: 0.6rem;
@@ -180,7 +180,7 @@
   
   .footer-social a {
     color: #fff;
-    background-color: #8e7cf7;
+    background-color: #00bfff;
     padding: 10px;
     border-radius: 50%;
     display: inline-flex;
@@ -191,6 +191,6 @@
   }
   
   .footer-social a:hover {
-    background-color: #6e5dd3;
+    background-color: #00bfff;
   }
   
