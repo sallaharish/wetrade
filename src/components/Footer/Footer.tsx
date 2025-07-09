@@ -86,7 +86,7 @@ const Footer = () => {
 </div>
 <div className="footer-social">
   <a href="https://www.facebook.com/WTSTechnologies" target="_blank" rel="noopener noreferrer"><i className="fa-brands"><FaFacebookF /></i></a>
-  <a href="https://www.instagram.com/wetradesolutions/" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.instagram.com/wetradesoftware/profilecard/?igsh=NnllNjAzdnl4eG92" target="_blank" rel="noopener noreferrer">
   <i className="fa-brands"><FaInstagram /></i>
 </a>
 

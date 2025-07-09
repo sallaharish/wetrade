@@ -82,7 +82,7 @@ const [snackbarOpen, setSnackbarOpen] = useState(false);
           <MdPhone className="icon" />
           <div>
             <h4>Phone</h4>
-            <p>+971 526981356</p>
+            <p>+971585686784</p>
           </div>
         </div>
 
